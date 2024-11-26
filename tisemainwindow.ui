@@ -6,14 +6,267 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>720</width>
-    <height>584</height>
+    <width>963</width>
+    <height>728</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <layout class="QVBoxLayout" name="verticalLayout_3">
+   <item>
+    <widget class="QTabWidget" name="tabWidget">
+     <property name="currentIndex">
+      <number>0</number>
+     </property>
+     <widget class="QWidget" name="oneD">
+      <attribute name="title">
+       <string>1D</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_4">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,4">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,2">
+           <item>
+            <widget class="QLabel" name="label">
+             <property name="font">
+              <font>
+               <pointsize>20</pointsize>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Time-
+Independent
+Schrodinger
+Equation
+(TISE); 1D</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_2">
+             <property name="font">
+              <font>
+               <pointsize>9</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>Plot Settings:
+Adjust the
+appearance and axis
+ranges of the plot
+window.
+
+Potential Energy:
+Configure the desired
+potential energy function
+and boundary conditions.
+
+Solution Parameters:
+Adjust the accuracy of
+the solution, as well as particle
+mass and the scale of Planck's
+constant.
+
+Display:
+Choose what variables
+should appear on the
+plot.
+
+Manage Solutions:
+Show and hide previously found
+solutions, and save desired
+solutions to be viewed and
+manipulated in the TDSE
+module.</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout" stretch="5,2">
+           <item>
+            <widget class="QCustomPlot" name="widget" native="true"/>
+           </item>
+           <item>
+            <widget class="QTabWidget" name="tabs">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="currentIndex">
+              <number>4</number>
+             </property>
+             <widget class="QWidget" name="plotsettings">
+              <attribute name="title">
+               <string>Plot Settings</string>
+              </attribute>
+             </widget>
+             <widget class="QWidget" name="potentialenergy">
+              <attribute name="title">
+               <string>Potential Energy</string>
+              </attribute>
+             </widget>
+             <widget class="QWidget" name="solutionparameters">
+              <attribute name="title">
+               <string>Solution Parameters</string>
+              </attribute>
+             </widget>
+             <widget class="QWidget" name="display">
+              <attribute name="title">
+               <string>Display</string>
+              </attribute>
+             </widget>
+             <widget class="QWidget" name="managesolutions">
+              <attribute name="title">
+               <string>Manage Solutions</string>
+              </attribute>
+             </widget>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QWidget" name="twoD">
+      <attribute name="title">
+       <string>2D</string>
+      </attribute>
+      <layout class="QVBoxLayout" name="verticalLayout_7">
+       <item>
+        <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,4">
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_5" stretch="1,2">
+           <item>
+            <widget class="QLabel" name="label_3">
+             <property name="font">
+              <font>
+               <pointsize>20</pointsize>
+               <bold>true</bold>
+              </font>
+             </property>
+             <property name="text">
+              <string>Time-
+Independent
+Schrodinger
+Equation
+(TISE); 2D</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QLabel" name="label_4">
+             <property name="font">
+              <font>
+               <pointsize>14</pointsize>
+              </font>
+             </property>
+             <property name="text">
+              <string>In addition to the
+same features which
+are available in 1D,
+the 2D module
+features an
+additional tab for
+modifying particle
+ spin, as well as a
+modified potential
+energy tab which
+enables the
+definition of
+spin-dependent
+potential energy
+functions.</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignmentFlag::AlignCenter</set>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </item>
+         <item>
+          <layout class="QVBoxLayout" name="verticalLayout_6" stretch="5,2">
+           <item>
+            <widget class="QCustomPlot" name="widget_2" native="true"/>
+           </item>
+           <item>
+            <widget class="QTabWidget" name="tabs_2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="currentIndex">
+              <number>5</number>
+             </property>
+             <widget class="QWidget" name="plotsettings_2">
+              <attribute name="title">
+               <string>Plot Settings</string>
+              </attribute>
+             </widget>
+             <widget class="QWidget" name="potentialenergy_2">
+              <attribute name="title">
+               <string>Potential Energy</string>
+              </attribute>
+             </widget>
+             <widget class="QWidget" name="solutionparameters_2">
+              <attribute name="title">
+               <string>Solution Parameters</string>
+              </attribute>
+             </widget>
+             <widget class="QWidget" name="display_2">
+              <attribute name="title">
+               <string>Display</string>
+              </attribute>
+             </widget>
+             <widget class="QWidget" name="managesolutions_2">
+              <attribute name="title">
+               <string>Manage Solutions</string>
+              </attribute>
+             </widget>
+             <widget class="QWidget" name="tab">
+              <attribute name="title">
+               <string>Spin Parameters</string>
+              </attribute>
+             </widget>
+            </widget>
+           </item>
+          </layout>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </widget>
+   </item>
+  </layout>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QCustomPlot</class>
+   <extends>QWidget</extends>
+   <header>qcustomplot.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
