@@ -15,9 +15,9 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout_3">
    <item>
-    <widget class="QTabWidget" name="tabWidget">
+    <widget class="QTabWidget" name="tabDSelect">
      <property name="currentIndex">
-      <number>0</number>
+      <number>1</number>
      </property>
      <widget class="QWidget" name="oneD">
       <attribute name="title">
@@ -27,7 +27,20 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,4">
          <item>
-          <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,2">
+          <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,4,1,2,1,1,2,1">
+           <item>
+            <spacer name="verticalSpacer_4">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
            <item>
             <widget class="QLabel" name="label">
              <property name="font">
@@ -49,56 +62,92 @@ Equation
             </widget>
            </item>
            <item>
-            <widget class="QLabel" name="label_2">
-             <property name="font">
-              <font>
-               <pointsize>9</pointsize>
-              </font>
+            <spacer name="verticalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="updatePlot1d">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
              </property>
              <property name="text">
-              <string>Plot Settings:
-Adjust the
-appearance and axis
-ranges of the plot
-window.
-
-Potential Energy:
-Configure the desired
-potential energy function
-and boundary conditions.
-
-Solution Parameters:
-Adjust the accuracy of
-the solution, as well as particle
-mass and the scale of Planck's
-constant.
-
-Display:
-Choose what variables
-should appear on the
-plot.
-
-Manage Solutions:
-Show and hide previously found
-solutions, and save desired
-solutions to be viewed and
-manipulated in the TDSE
-module.</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignmentFlag::AlignCenter</set>
+              <string>Update Plot</string>
              </property>
             </widget>
+           </item>
+           <item>
+            <widget class="QProgressBar" name="progressBar">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="value">
+              <number>24</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="tise1DTabInfo">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>More Information on Tabs</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_3">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
            </item>
           </layout>
          </item>
          <item>
           <layout class="QVBoxLayout" name="verticalLayout" stretch="5,2">
            <item>
-            <widget class="QCustomPlot" name="widget" native="true"/>
+            <widget class="QCustomPlot" name="TISEPlot1D" native="true"/>
            </item>
            <item>
-            <widget class="QTabWidget" name="tabs">
+            <widget class="QTabWidget" name="tabs1d">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
@@ -106,7 +155,7 @@ module.</string>
               </sizepolicy>
              </property>
              <property name="currentIndex">
-              <number>4</number>
+              <number>0</number>
              </property>
              <widget class="QWidget" name="plotsettings">
               <attribute name="title">
@@ -149,7 +198,20 @@ module.</string>
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="1,4">
          <item>
-          <layout class="QVBoxLayout" name="verticalLayout_5" stretch="1,2">
+          <layout class="QVBoxLayout" name="verticalLayout_5" stretch="1,4,1,2,1,1,2,1">
+           <item>
+            <spacer name="verticalSpacer_5">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
            <item>
             <widget class="QLabel" name="label_3">
              <property name="font">
@@ -171,43 +233,86 @@ Equation
             </widget>
            </item>
            <item>
-            <widget class="QLabel" name="label_4">
-             <property name="font">
-              <font>
-               <pointsize>14</pointsize>
-              </font>
+            <spacer name="verticalSpacer_6">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="updatePlot2d">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
              </property>
              <property name="text">
-              <string>In addition to the
-same features which
-are available in 1D,
-the 2D module
-features an
-additional tab for
-modifying particle
- spin, as well as a
-modified potential
-energy tab which
-enables the
-definition of
-spin-dependent
-potential energy
-functions.</string>
-             </property>
-             <property name="alignment">
-              <set>Qt::AlignmentFlag::AlignCenter</set>
+              <string>Update Plot</string>
              </property>
             </widget>
+           </item>
+           <item>
+            <widget class="QProgressBar" name="progressBar_2">
+             <property name="value">
+              <number>24</number>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_7">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>More Information on Tabs</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <spacer name="verticalSpacer_8">
+             <property name="orientation">
+              <enum>Qt::Orientation::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
            </item>
           </layout>
          </item>
          <item>
           <layout class="QVBoxLayout" name="verticalLayout_6" stretch="5,2">
            <item>
-            <widget class="QCustomPlot" name="widget_2" native="true"/>
+            <widget class="QCustomPlot" name="TISEPlot2D" native="true"/>
            </item>
            <item>
-            <widget class="QTabWidget" name="tabs_2">
+            <widget class="QTabWidget" name="tabs2d">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
                <horstretch>0</horstretch>
@@ -267,6 +372,10 @@ functions.</string>
    <container>1</container>
   </customwidget>
  </customwidgets>
+ <tabstops>
+  <tabstop>tabs1d</tabstop>
+  <tabstop>tabs2d</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>
