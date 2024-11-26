@@ -19,7 +19,8 @@ SOURCES += \
     TISE_2D.cpp \
     main.cpp \
     mainwindow.cpp \
-    qcustomplot.cpp
+    qcustomplot.cpp \
+    tisemainwindow.cpp
 
 HEADERS += \
     Potential.h \
@@ -31,10 +32,12 @@ HEADERS += \
     State1D.h \
     State2D.h \
     mainwindow.h \
-    qcustomplot.h
+    qcustomplot.h \
+    tisemainwindow.h
 
 FORMS += \
-    mainwindow.ui
+    mainwindow.ui \
+    tisemainwindow.ui
 
 QMAKE_CXXFLAGS += -Wa,-mbig-obj
 

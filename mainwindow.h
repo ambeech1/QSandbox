@@ -17,6 +17,13 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void on_aboutQt_clicked();
+
+    void on_aboutApp_clicked();
+
+    void on_startTise_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
