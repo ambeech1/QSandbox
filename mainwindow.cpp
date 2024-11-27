@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "tisemainwindow.h"
+#include "tdsemainwindow.h"
 #include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
@@ -25,12 +26,17 @@ void MainWindow::on_aboutQt_clicked()
     QMessageBox::aboutQt(this, "About Qt");
 }
 
-
-
 void MainWindow::on_startTise_clicked()
 {
     TISEMainWindow tiseMainWindow;
     tiseMainWindow.setModal(true);
     tiseMainWindow.exec();
+}
+
+void MainWindow::on_startTdse_clicked()
+{
+    TDSEMainWindow tdseMainWindow;
+    tdseMainWindow.setModal(true);
+    tdseMainWindow.exec();
 }
 

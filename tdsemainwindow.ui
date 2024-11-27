@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>TISEMainWindow</class>
- <widget class="QDialog" name="TISEMainWindow">
+ <class>TDSEMainWindow</class>
+ <widget class="QDialog" name="TDSEMainWindow">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>963</width>
-    <height>728</height>
+    <width>942</width>
+    <height>618</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -51,10 +51,10 @@
              </property>
              <property name="text">
               <string>Time-
-Independent
+Dependent
 Schrodinger
 Equation
-(TISE); 1D</string>
+(TDSE); 1D</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -294,10 +294,10 @@ Equation
              </property>
              <property name="text">
               <string>Time-
-Independent
+Dependent
 Schrodinger
 Equation
-(TISE); 2D</string>
+(TDSE); 2D</string>
              </property>
              <property name="alignment">
               <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -392,12 +392,25 @@ Equation
               </sizepolicy>
              </property>
              <property name="currentIndex">
-              <number>5</number>
+              <number>0</number>
              </property>
              <widget class="QWidget" name="plotsettings_2">
               <attribute name="title">
                <string>Plot Settings</string>
               </attribute>
+              <widget class="QLabel" name="label_7">
+               <property name="geometry">
+                <rect>
+                 <x>250</x>
+                 <y>50</y>
+                 <width>121</width>
+                 <height>16</height>
+                </rect>
+               </property>
+               <property name="text">
+                <string>Aspect Ratio?</string>
+               </property>
+              </widget>
              </widget>
              <widget class="QWidget" name="potentialenergy_2">
               <attribute name="title">
@@ -444,9 +457,6 @@ Equation
    <container>1</container>
   </customwidget>
  </customwidgets>
- <tabstops>
-  <tabstop>tabs2d</tabstop>
- </tabstops>
  <resources/>
  <connections/>
 </ui>

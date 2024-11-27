@@ -20,6 +20,7 @@ SOURCES += \
     main.cpp \
     mainwindow.cpp \
     qcustomplot.cpp \
+    tdsemainwindow.cpp \
     tisemainwindow.cpp
 
 HEADERS += \
@@ -33,10 +34,12 @@ HEADERS += \
     State2D.h \
     mainwindow.h \
     qcustomplot.h \
+    tdsemainwindow.h \
     tisemainwindow.h
 
 FORMS += \
     mainwindow.ui \
+    tdsemainwindow.ui \
     tisemainwindow.ui
 
 QMAKE_CXXFLAGS += -Wa,-mbig-obj

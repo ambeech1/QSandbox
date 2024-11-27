@@ -24,6 +24,8 @@ private slots:
 
     void on_startTise_clicked();
 
+    void on_startTdse_clicked();
+
 private:
     Ui::MainWindow *ui;
 };
