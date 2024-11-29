@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_3">
+  <layout class="QVBoxLayout" name="verticalLayout_13">
    <item>
     <widget class="QTabWidget" name="tabDSelect">
      <property name="currentIndex">
@@ -27,7 +27,7 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,4">
          <item>
-          <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,4,1,2,1,1,2,1">
+          <layout class="QVBoxLayout" name="verticalLayout_2" stretch="1,4,1,2,1">
            <item>
             <spacer name="verticalSpacer_4">
              <property name="orientation">
@@ -58,45 +58,6 @@ Equation
              </property>
              <property name="alignment">
               <set>Qt::AlignmentFlag::AlignCenter</set>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <spacer name="verticalSpacer_2">
-             <property name="orientation">
-              <enum>Qt::Orientation::Vertical</enum>
-             </property>
-             <property name="sizeHint" stdset="0">
-              <size>
-               <width>20</width>
-               <height>40</height>
-              </size>
-             </property>
-            </spacer>
-           </item>
-           <item>
-            <widget class="QPushButton" name="updatePlot1d">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="text">
-              <string>Update Plot</string>
-             </property>
-            </widget>
-           </item>
-           <item>
-            <widget class="QProgressBar" name="progressBar">
-             <property name="sizePolicy">
-              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
-               <horstretch>0</horstretch>
-               <verstretch>0</verstretch>
-              </sizepolicy>
-             </property>
-             <property name="value">
-              <number>24</number>
              </property>
             </widget>
            </item>
@@ -142,7 +103,7 @@ Equation
           </layout>
          </item>
          <item>
-          <layout class="QVBoxLayout" name="verticalLayout" stretch="5,2">
+          <layout class="QVBoxLayout" name="verticalLayout" stretch="7,0">
            <item>
             <widget class="QCustomPlot" name="TISEPlot1D" native="true">
              <layout class="QVBoxLayout" name="verticalLayout_8"/>
@@ -157,7 +118,7 @@ Equation
               </sizepolicy>
              </property>
              <property name="currentIndex">
-              <number>0</number>
+              <number>4</number>
              </property>
              <widget class="QWidget" name="plotsettings">
               <attribute name="title">
@@ -165,53 +126,379 @@ Equation
               </attribute>
               <layout class="QVBoxLayout" name="verticalLayout_9">
                <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="1,4">
+                <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="2,2,2,2,1">
                  <item>
-                  <layout class="QFormLayout" name="formLayout">
+                  <layout class="QGridLayout" name="gridLayout" columnstretch="1,1" columnminimumwidth="1,1">
+                   <item row="1" column="0">
+                    <layout class="QFormLayout" name="formLayout_4">
+                     <item row="0" column="0">
+                      <widget class="QLabel" name="label_5">
+                       <property name="text">
+                        <string>y Min (Left)</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="1">
+                      <widget class="QLineEdit" name="ymin"/>
+                     </item>
+                     <item row="1" column="0">
+                      <widget class="QLabel" name="label_6">
+                       <property name="text">
+                        <string>y Max (Left)</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="1">
+                      <widget class="QLineEdit" name="ymax"/>
+                     </item>
+                    </layout>
+                   </item>
                    <item row="0" column="0">
-                    <widget class="QLabel" name="label_2">
+                    <layout class="QFormLayout" name="formLayout_3">
+                     <item row="0" column="0">
+                      <widget class="QLabel" name="label_2">
+                       <property name="text">
+                        <string>x Min</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="1">
+                      <widget class="QLineEdit" name="xmin">
+                       <property name="text">
+                        <string/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="0">
+                      <widget class="QLabel" name="label_4">
+                       <property name="text">
+                        <string>x Max</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="1">
+                      <widget class="QLineEdit" name="xmax"/>
+                     </item>
+                    </layout>
+                   </item>
+                   <item row="1" column="1">
+                    <layout class="QFormLayout" name="formLayout">
+                     <item row="0" column="0">
+                      <widget class="QLabel" name="label_10">
+                       <property name="text">
+                        <string>y Min (Right)</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="1">
+                      <widget class="QLineEdit" name="lineEdit_2"/>
+                     </item>
+                     <item row="1" column="0">
+                      <widget class="QLabel" name="label_11">
+                       <property name="text">
+                        <string>y Max (Right)</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="1">
+                      <widget class="QLineEdit" name="lineEdit_3"/>
+                     </item>
+                    </layout>
+                   </item>
+                   <item row="0" column="1">
+                    <widget class="QPushButton" name="autoRange1d">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
                      <property name="text">
-                      <string>x Min</string>
+                      <string>Auto Range</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <layout class="QVBoxLayout" name="verticalLayout_3">
+                   <item>
+                    <widget class="QCheckBox" name="checkBox_6">
+                     <property name="text">
+                      <string>Show Axis Labels</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QCheckBox" name="checkBox_7">
+                     <property name="text">
+                      <string>Show Legend</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <layout class="QVBoxLayout" name="verticalLayout_10">
+                   <item>
+                    <widget class="QCheckBox" name="checkBox_2">
+                     <property name="text">
+                      <string>Show x Ticks</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QCheckBox" name="checkBox">
+                     <property name="text">
+                      <string>Show y Ticks (Left)</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QCheckBox" name="checkBox_3">
+                     <property name="text">
+                      <string>Show y Ticks (Right)</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QCheckBox" name="checkBox_4">
+                     <property name="text">
+                      <string>Show Grid</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QCheckBox" name="checkBox_5">
+                     <property name="text">
+                      <string>Show Axes</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <widget class="QScrollArea" name="scrollArea">
+                   <property name="widgetResizable">
+                    <bool>true</bool>
+                   </property>
+                   <widget class="QWidget" name="scrollAreaWidgetContents">
+                    <property name="geometry">
+                     <rect>
+                      <x>0</x>
+                      <y>0</y>
+                      <width>131</width>
+                      <height>125</height>
+                     </rect>
+                    </property>
+                   </widget>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QScrollBar" name="verticalScrollBar">
+                   <property name="orientation">
+                    <enum>Qt::Orientation::Vertical</enum>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="potentialenergy">
+              <attribute name="title">
+               <string>Potential Energy</string>
+              </attribute>
+              <layout class="QHBoxLayout" name="horizontalLayout_4">
+               <item>
+                <layout class="QFormLayout" name="formLayout_2">
+                 <property name="formAlignment">
+                  <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+                 </property>
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label_8">
+                   <property name="text">
+                    <string>Potential
+Energy
+Function</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QLineEdit" name="lineEdit">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QFormLayout" name="formLayout_5">
+                 <property name="formAlignment">
+                  <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+                 </property>
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label_9">
+                   <property name="text">
+                    <string>Potential
+Energy
+Units</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <layout class="QVBoxLayout" name="verticalLayout_11">
+                   <item>
+                    <widget class="QRadioButton" name="radioButton">
+                     <property name="text">
+                      <string>Make Dimensionless</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QRadioButton" name="radioButton_2">
+                     <property name="text">
+                      <string>eV</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QRadioButton" name="radioButton_3">
+                     <property name="text">
+                      <string>keV</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QRadioButton" name="radioButton_4">
+                     <property name="text">
+                      <string>MeV</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+               <item>
+                <layout class="QFormLayout" name="formLayout_6">
+                 <property name="formAlignment">
+                  <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+                 </property>
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label_12">
+                   <property name="text">
+                    <string>Position
+Units</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <layout class="QVBoxLayout" name="verticalLayout_12">
+                   <item>
+                    <widget class="QRadioButton" name="radioButton_5">
+                     <property name="text">
+                      <string>Make Dimensionless</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QRadioButton" name="radioButton_6">
+                     <property name="text">
+                      <string>nm</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QRadioButton" name="radioButton_7">
+                     <property name="text">
+                      <string>um</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QRadioButton" name="radioButton_8">
+                     <property name="text">
+                      <string>mm</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                </layout>
+               </item>
+              </layout>
+             </widget>
+             <widget class="QWidget" name="solutionparameters">
+              <attribute name="title">
+               <string>Solution Parameters</string>
+              </attribute>
+              <layout class="QVBoxLayout" name="verticalLayout_15">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="1,1,2">
+                 <item>
+                  <layout class="QFormLayout" name="formLayout_7">
+                   <property name="formAlignment">
+                    <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+                   </property>
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="label_7">
+                     <property name="text">
+                      <string>Position Step</string>
                      </property>
                     </widget>
                    </item>
                    <item row="0" column="1">
-                    <widget class="QLineEdit" name="xmin"/>
+                    <widget class="QLineEdit" name="lineEdit_4"/>
                    </item>
                    <item row="1" column="0">
-                    <widget class="QLabel" name="label_4">
+                    <widget class="QLabel" name="label_13">
                      <property name="text">
-                      <string>x Max</string>
+                      <string>Principal Quantum Number</string>
                      </property>
                     </widget>
                    </item>
                    <item row="1" column="1">
-                    <widget class="QLineEdit" name="xmax"/>
+                    <widget class="QLineEdit" name="lineEdit_5"/>
                    </item>
-                   <item row="2" column="0">
-                    <widget class="QLabel" name="label_5">
+                   <item row="2" column="0" colspan="2">
+                    <widget class="QCheckBox" name="checkBox_8">
                      <property name="text">
-                      <string>y Min</string>
+                      <string>Calculate Up To Principal Quantum Number</string>
                      </property>
                     </widget>
                    </item>
-                   <item row="2" column="1">
-                    <widget class="QLineEdit" name="ymin"/>
-                   </item>
-                   <item row="3" column="0">
-                    <widget class="QLabel" name="label_6">
+                  </layout>
+                 </item>
+                 <item>
+                  <layout class="QVBoxLayout" name="verticalLayout_14">
+                   <item>
+                    <widget class="QPushButton" name="updatePlot1d">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
                      <property name="text">
-                      <string>y Max</string>
+                      <string>Compute Solution</string>
                      </property>
                     </widget>
                    </item>
-                   <item row="3" column="1">
-                    <widget class="QLineEdit" name="ymax"/>
-                   </item>
-                   <item row="4" column="0" colspan="2">
-                    <widget class="QPushButton" name="autoRange1d">
-                     <property name="text">
-                      <string>Auto Range</string>
+                   <item>
+                    <widget class="QProgressBar" name="progressBar">
+                     <property name="sizePolicy">
+                      <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                       <horstretch>0</horstretch>
+                       <verstretch>0</verstretch>
+                      </sizepolicy>
+                     </property>
+                     <property name="value">
+                      <number>24</number>
                      </property>
                     </widget>
                    </item>
@@ -234,20 +521,116 @@ Equation
                </item>
               </layout>
              </widget>
-             <widget class="QWidget" name="potentialenergy">
-              <attribute name="title">
-               <string>Potential Energy</string>
-              </attribute>
-             </widget>
-             <widget class="QWidget" name="solutionparameters">
-              <attribute name="title">
-               <string>Solution Parameters</string>
-              </attribute>
-             </widget>
              <widget class="QWidget" name="display">
               <attribute name="title">
                <string>Display</string>
               </attribute>
+              <layout class="QVBoxLayout" name="verticalLayout_18">
+               <item>
+                <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="1,1,2">
+                 <item>
+                  <layout class="QVBoxLayout" name="verticalLayout_16">
+                   <item>
+                    <widget class="QRadioButton" name="radioButton_9">
+                     <property name="text">
+                      <string>Probability Amplitude</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <layout class="QGridLayout" name="gridLayout_2" rowstretch="0,0" columnstretch="1,3" rowminimumheight="0,0">
+                     <item row="0" column="1">
+                      <widget class="QCheckBox" name="checkBox_9">
+                       <property name="text">
+                        <string>Real</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="0">
+                      <spacer name="horizontalSpacer_2">
+                       <property name="orientation">
+                        <enum>Qt::Orientation::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                     <item row="1" column="1">
+                      <widget class="QCheckBox" name="checkBox_10">
+                       <property name="text">
+                        <string>Imaginary</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="0">
+                      <spacer name="horizontalSpacer_3">
+                       <property name="orientation">
+                        <enum>Qt::Orientation::Horizontal</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>40</width>
+                         <height>20</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                    </layout>
+                   </item>
+                   <item>
+                    <widget class="QRadioButton" name="radioButton_10">
+                     <property name="text">
+                      <string>Probability Density</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <layout class="QVBoxLayout" name="verticalLayout_17">
+                   <item>
+                    <widget class="QCheckBox" name="checkBox_11">
+                     <property name="text">
+                      <string>Position Expectation</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QCheckBox" name="checkBox_12">
+                     <property name="text">
+                      <string>Velocity Expectation</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QCheckBox" name="checkBox_13">
+                     <property name="text">
+                      <string>Momentum Expectation</string>
+                     </property>
+                    </widget>
+                   </item>
+                  </layout>
+                 </item>
+                 <item>
+                  <spacer name="horizontalSpacer_4">
+                   <property name="orientation">
+                    <enum>Qt::Orientation::Horizontal</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>40</width>
+                     <height>20</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                </layout>
+               </item>
+              </layout>
              </widget>
              <widget class="QWidget" name="managesolutions">
               <attribute name="title">
@@ -448,5 +831,70 @@ Equation
   <tabstop>tabs2d</tabstop>
  </tabstops>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>autoRange1d</sender>
+   <signal>clicked()</signal>
+   <receiver>ymax</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>276</x>
+     <y>675</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>284</x>
+     <y>652</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>autoRange1d</sender>
+   <signal>clicked()</signal>
+   <receiver>ymin</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>338</x>
+     <y>674</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>337</x>
+     <y>625</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>autoRange1d</sender>
+   <signal>clicked()</signal>
+   <receiver>xmax</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>301</x>
+     <y>679</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>303</x>
+     <y>592</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>autoRange1d</sender>
+   <signal>clicked()</signal>
+   <receiver>xmin</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>246</x>
+     <y>673</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>269</x>
+     <y>563</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>

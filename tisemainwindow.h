@@ -20,6 +20,16 @@ private slots:
 
     void on_pushButton_2_clicked();
 
+    void on_xmin_textChanged(const QString &arg1);
+
+    void on_xmax_textChanged(const QString &arg1);
+
+    void on_ymin_textChanged(const QString &arg1);
+
+    void on_ymax_textChanged(const QString &arg1);
+
+    void on_autoRange1d_clicked();
+
 private:
     Ui::TISEMainWindow *ui;
 };
