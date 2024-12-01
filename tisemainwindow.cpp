@@ -44,6 +44,8 @@ TISEMainWindow::TISEMainWindow(QWidget *parent)
     ui->TISEPlot1D->yAxis->setRange(-7, 7);
     ui->TISEPlot1D->yAxis2->setRange(-7, 7);
     ui->TISEPlot1D->yAxis2->setVisible(true);
+    ui->TISEPlot1D->xAxis->grid()->setSubGridVisible(true);
+    ui->TISEPlot1D->yAxis->grid()->setSubGridVisible(true);
 
 
     /**
@@ -225,16 +227,27 @@ void TISEMainWindow::on_showLegend_stateChanged(int arg1)
 void TISEMainWindow::on_showGrid_stateChanged(int arg1)
 {
     if (ui->showGrid->isChecked()) {
-
-
-
+        ui->TISEPlot1D->xAxis->grid()->setSubGridVisible(true);
+        ui->TISEPlot1D->yAxis->grid()->setSubGridVisible(true);
+        ui->TISEPlot1D->xAxis->grid()->setPen(QPen(QColor(0, 0, 0, 30), 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+        ui->TISEPlot1D->yAxis->grid()->setPen(QPen(QColor(0, 0, 0, 30), 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+        if (!ui->showAxes->isChecked()) {
+            ui->TISEPlot1D->xAxis->grid()->setZeroLinePen(QPen(QColor(0, 0, 0, 30), 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+            ui->TISEPlot1D->yAxis->grid()->setZeroLinePen(QPen(QColor(0, 0, 0, 30), 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+        }
         ui->TISEPlot1D->replot();
         ui->TISEPlot1D->update();
+        QColor();
     }
     else {
-
-
-
+        ui->TISEPlot1D->xAxis->grid()->setSubGridVisible(false);
+        ui->TISEPlot1D->yAxis->grid()->setSubGridVisible(false);
+        ui->TISEPlot1D->xAxis->grid()->setPen(QPen(QColor(255, 255, 255, 100), 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+        ui->TISEPlot1D->yAxis->grid()->setPen(QPen(QColor(255, 255, 255, 100), 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+        if (!ui->showAxes->isChecked()) {
+            ui->TISEPlot1D->xAxis->grid()->setZeroLinePen(QPen(QColor(255, 255, 255, 100), 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+            ui->TISEPlot1D->yAxis->grid()->setZeroLinePen(QPen(QColor(255, 255, 255, 100), 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+        }
         ui->TISEPlot1D->replot();
         ui->TISEPlot1D->update();
     }
@@ -243,7 +256,24 @@ void TISEMainWindow::on_showGrid_stateChanged(int arg1)
 
 void TISEMainWindow::on_showAxes_stateChanged(int arg1)
 {
-
+    if (ui->showAxes->isChecked()) {
+        ui->TISEPlot1D->xAxis->grid()->setZeroLinePen(QPen(QColor(0, 0, 0, 100), 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+        ui->TISEPlot1D->yAxis->grid()->setZeroLinePen(QPen(QColor(0, 0, 0, 100), 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+        ui->TISEPlot1D->replot();
+        ui->TISEPlot1D->update();
+    }
+    else {
+        if (ui->showGrid->isChecked()) {
+            ui->TISEPlot1D->xAxis->grid()->setZeroLinePen(QPen(QColor(0, 0, 0, 30), 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+            ui->TISEPlot1D->yAxis->grid()->setZeroLinePen(QPen(QColor(0, 0, 0, 30), 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+        }
+        else {
+            ui->TISEPlot1D->xAxis->grid()->setZeroLinePen(QPen(QColor(255, 255, 255, 100), 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+            ui->TISEPlot1D->yAxis->grid()->setZeroLinePen(QPen(QColor(255, 255, 255, 100), 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+        }
+        ui->TISEPlot1D->replot();
+        ui->TISEPlot1D->update();
+    }
 }
 
 
