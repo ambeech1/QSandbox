@@ -19,7 +19,7 @@ TISEMainWindow::TISEMainWindow(QWidget *parent)
     ui->showGrid->setChecked(true);
     ui->showAxes->setChecked(true);
 
-    // set up legend
+    // set up legend (1D)
     ui->TISEPlot1D->legend->setVisible(true);
     QFont legendFont = font();
     legendFont.setPointSize(9);
@@ -28,7 +28,7 @@ TISEMainWindow::TISEMainWindow(QWidget *parent)
     ui->TISEPlot1D->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignTop | Qt::AlignRight);
     legendPosInd = 0;
 
-    // set up plot
+    // set up plot (1D)
     ui->TISEPlot1D->addGraph(ui->TISEPlot1D->xAxis, ui->TISEPlot1D->yAxis);
     ui->TISEPlot1D->graph(0)->setPen(QPen(QColor(255, 100, 0)));
     ui->TISEPlot1D->graph(0)->setLineStyle(QCPGraph::lsLine);
@@ -48,6 +48,7 @@ TISEMainWindow::TISEMainWindow(QWidget *parent)
     ui->TISEPlot1D->yAxis->grid()->setSubGridVisible(true);
 
 
+
     /**
     ui->TISEPlot2D->addGraph();
     ui->TISEPlot2D->graph()->setLineStyle(QCPGraph::lsLine);
@@ -60,17 +61,16 @@ TISEMainWindow::TISEMainWindow(QWidget *parent)
     */
 }
 
+// 1D
 TISEMainWindow::~TISEMainWindow()
 {
     delete ui;
 }
 
-
 void TISEMainWindow::on_tise1DTabInfo_clicked()
 {
     QMessageBox::about(this, "Tab Descriptions", "Plot Settings: Adjust the appearance and axis ranges of the plot window.\n\nPotential Energy: Configure the desired potential energy function and boundary conditions.\n\nSolution Parameters: Adjust the accuracy of the solution, as well as particle mass and the scale of Planck's constant.\n\nDisplay: Choose what variables should appear on the plot.\n\nManage Solutions: Show and hide previously found solutions, and save desired solutions to be viewed and manipulated in the TDSE module.");
 }
-
 
 void TISEMainWindow::on_pushButton_2_clicked()
 {
@@ -92,7 +92,6 @@ void TISEMainWindow::on_xmin_textChanged(const QString &arg1)
     }
 }
 
-
 void TISEMainWindow::on_xmax_textChanged(const QString &arg1)
 {
     if (arg1 == "") {
@@ -107,7 +106,6 @@ void TISEMainWindow::on_xmax_textChanged(const QString &arg1)
         ui->TISEPlot1D->update();
     }
 }
-
 
 void TISEMainWindow::on_ymin_textChanged(const QString &arg1)
 {
@@ -124,7 +122,6 @@ void TISEMainWindow::on_ymin_textChanged(const QString &arg1)
     }
 }
 
-
 void TISEMainWindow::on_ymax_textChanged(const QString &arg1)
 {
     if (arg1 == "") {
@@ -139,7 +136,6 @@ void TISEMainWindow::on_ymax_textChanged(const QString &arg1)
         ui->TISEPlot1D->update();
     }
 }
-
 
 void TISEMainWindow::on_autoRange1d_clicked()
 {
@@ -157,7 +153,6 @@ void TISEMainWindow::on_autoRange1d_clicked()
     }
 }
 
-
 void TISEMainWindow::on_yminR_textChanged(const QString &arg1)
 {
     if (arg1 == "") {
@@ -173,7 +168,6 @@ void TISEMainWindow::on_yminR_textChanged(const QString &arg1)
     }
 
 }
-
 
 void TISEMainWindow::on_ymaxR_textChanged(const QString &arg1)
 {
@@ -208,7 +202,6 @@ void TISEMainWindow::on_showAxisLabels_stateChanged(int arg1)
         ui->TISEPlot1D->update();
     }
 }
-
 
 void TISEMainWindow::on_showLegend_stateChanged(int arg1)
 {
@@ -253,7 +246,6 @@ void TISEMainWindow::on_showGrid_stateChanged(int arg1)
     }
 }
 
-
 void TISEMainWindow::on_showAxes_stateChanged(int arg1)
 {
     if (ui->showAxes->isChecked()) {
@@ -276,7 +268,6 @@ void TISEMainWindow::on_showAxes_stateChanged(int arg1)
     }
 }
 
-
 void TISEMainWindow::on_showXTicks_stateChanged(int arg1)
 {
     if (ui->showXTicks->isChecked()) {
@@ -290,7 +281,6 @@ void TISEMainWindow::on_showXTicks_stateChanged(int arg1)
         ui->TISEPlot1D->update();
     }
 }
-
 
 void TISEMainWindow::on_showYTicksL_stateChanged(int arg1)
 {
@@ -306,7 +296,6 @@ void TISEMainWindow::on_showYTicksL_stateChanged(int arg1)
     }
 }
 
-
 void TISEMainWindow::on_showYTicksR_stateChanged(int arg1)
 {
     if (ui->showYTicksR->isChecked()) {
@@ -320,7 +309,6 @@ void TISEMainWindow::on_showYTicksR_stateChanged(int arg1)
         ui->TISEPlot1D->update();
     }
 }
-
 
 void TISEMainWindow::on_pushButton_clicked()
 {
@@ -349,4 +337,63 @@ void TISEMainWindow::on_pushButton_clicked()
         legendPosInd = 0;
     }
 }
-// ui->TISEPlot1D->axisRect()->insetLayout()->setInsetAlignment(0, Qt::AlignBottom | Qt::AlignRight);
+
+
+
+// 2D
+void TISEMainWindow::on_xmin_2_textChanged(const QString &arg1)
+{}
+
+void TISEMainWindow::on_xmax_2_textChanged(const QString &arg1)
+{}
+
+void TISEMainWindow::on_ymin_2_textChanged(const QString &arg1)
+{
+
+}
+
+void TISEMainWindow::on_ymax_2_textChanged(const QString &arg1)
+{
+
+}
+
+void TISEMainWindow::on_autoRange1d_2_clicked()
+{
+
+}
+
+void TISEMainWindow::on_showAxisLabels_2_stateChanged(int arg1)
+{
+
+}
+
+void TISEMainWindow::on_showLegend_2_stateChanged(int arg1)
+{
+
+}
+
+void TISEMainWindow::on_showColormap_stateChanged(int arg1)
+{
+
+}
+
+void TISEMainWindow::on_showXTicks_2_stateChanged(int arg1)
+{
+
+}
+
+void TISEMainWindow::on_showYTicksL_2_stateChanged(int arg1)
+{
+
+}
+
+void TISEMainWindow::on_moveLegend_clicked()
+{
+
+}
+
+void TISEMainWindow::on_lineEdit_8_textChanged(const QString &arg1)
+{
+
+}
+
