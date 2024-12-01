@@ -30,6 +30,26 @@ private slots:
 
     void on_autoRange1d_clicked();
 
+    void on_yminR_textChanged(const QString &arg1);
+
+    void on_ymaxR_textChanged(const QString &arg1);
+
+    void on_showAxisLabels_stateChanged(int arg1);
+
+    void on_showLegend_stateChanged(int arg1);
+
+    void on_showGrid_stateChanged(int arg1);
+
+    void on_showAxes_stateChanged(int arg1);
+
+    void on_showXTicks_stateChanged(int arg1);
+
+    void on_showYTicksL_stateChanged(int arg1);
+
+    void on_showYTicksR_stateChanged(int arg1);
+
+    void on_pushButton_clicked();
+
 private:
     Ui::TISEMainWindow *ui;
 };

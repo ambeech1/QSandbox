@@ -75,7 +75,7 @@ Sandbox</string>
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,3">
         <item>
-         <layout class="QVBoxLayout" name="verticalLayout">
+         <layout class="QVBoxLayout" name="verticalLayout" stretch="1,1,1,1">
           <item>
            <widget class="QPushButton" name="aboutApp">
             <property name="sizePolicy">
@@ -105,6 +105,32 @@ Sandbox</string>
             </property>
             <property name="text">
              <string>About Qt</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>About Eigen</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="pushButton_2">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="text">
+             <string>About MuParser</string>
             </property>
            </widget>
           </item>

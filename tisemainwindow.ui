@@ -118,7 +118,7 @@ Equation
               </sizepolicy>
              </property>
              <property name="currentIndex">
-              <number>4</number>
+              <number>1</number>
              </property>
              <widget class="QWidget" name="plotsettings">
               <attribute name="title">
@@ -191,7 +191,7 @@ Equation
                       </widget>
                      </item>
                      <item row="0" column="1">
-                      <widget class="QLineEdit" name="lineEdit_2"/>
+                      <widget class="QLineEdit" name="yminR"/>
                      </item>
                      <item row="1" column="0">
                       <widget class="QLabel" name="label_11">
@@ -201,7 +201,7 @@ Equation
                       </widget>
                      </item>
                      <item row="1" column="1">
-                      <widget class="QLineEdit" name="lineEdit_3"/>
+                      <widget class="QLineEdit" name="ymaxR"/>
                      </item>
                     </layout>
                    </item>
@@ -223,14 +223,28 @@ Equation
                  <item>
                   <layout class="QVBoxLayout" name="verticalLayout_3">
                    <item>
-                    <widget class="QCheckBox" name="checkBox_6">
+                    <widget class="QCheckBox" name="showAxisLabels">
                      <property name="text">
                       <string>Show Axis Labels</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QCheckBox" name="checkBox_7">
+                    <widget class="QCheckBox" name="showGrid">
+                     <property name="text">
+                      <string>Show Grid</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QCheckBox" name="showAxes">
+                     <property name="text">
+                      <string>Show Axes</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item>
+                    <widget class="QCheckBox" name="showLegend">
                      <property name="text">
                       <string>Show Legend</string>
                      </property>
@@ -241,37 +255,30 @@ Equation
                  <item>
                   <layout class="QVBoxLayout" name="verticalLayout_10">
                    <item>
-                    <widget class="QCheckBox" name="checkBox_2">
+                    <widget class="QCheckBox" name="showXTicks">
                      <property name="text">
                       <string>Show x Ticks</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QCheckBox" name="checkBox">
+                    <widget class="QCheckBox" name="showYTicksL">
                      <property name="text">
                       <string>Show y Ticks (Left)</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QCheckBox" name="checkBox_3">
+                    <widget class="QCheckBox" name="showYTicksR">
                      <property name="text">
                       <string>Show y Ticks (Right)</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QCheckBox" name="checkBox_4">
+                    <widget class="QPushButton" name="pushButton">
                      <property name="text">
-                      <string>Show Grid</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QCheckBox" name="checkBox_5">
-                     <property name="text">
-                      <string>Show Axes</string>
+                      <string>Move Legend</string>
                      </property>
                     </widget>
                    </item>
@@ -288,7 +295,7 @@ Equation
                       <x>0</x>
                       <y>0</y>
                       <width>131</width>
-                      <height>125</height>
+                      <height>107</height>
                      </rect>
                     </property>
                    </widget>
@@ -331,6 +338,13 @@ Function</string>
                      <horstretch>0</horstretch>
                      <verstretch>0</verstretch>
                     </sizepolicy>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0" colspan="2">
+                  <widget class="QPushButton" name="pushButton_3">
+                   <property name="text">
+                    <string>Syntax Information</string>
                    </property>
                   </widget>
                  </item>
@@ -839,12 +853,12 @@ Equation
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>276</x>
-     <y>675</y>
+     <x>483</x>
+     <y>624</y>
     </hint>
     <hint type="destinationlabel">
-     <x>284</x>
-     <y>652</y>
+     <x>345</x>
+     <y>679</y>
     </hint>
    </hints>
   </connection>
@@ -855,12 +869,12 @@ Equation
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>338</x>
-     <y>674</y>
+     <x>483</x>
+     <y>624</y>
     </hint>
     <hint type="destinationlabel">
-     <x>337</x>
-     <y>625</y>
+     <x>345</x>
+     <y>652</y>
     </hint>
    </hints>
   </connection>
@@ -871,12 +885,12 @@ Equation
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>301</x>
-     <y>679</y>
+     <x>483</x>
+     <y>624</y>
     </hint>
     <hint type="destinationlabel">
-     <x>303</x>
-     <y>592</y>
+     <x>345</x>
+     <y>613</y>
     </hint>
    </hints>
   </connection>
@@ -887,12 +901,44 @@ Equation
    <slot>clear()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>246</x>
-     <y>673</y>
+     <x>483</x>
+     <y>624</y>
     </hint>
     <hint type="destinationlabel">
-     <x>269</x>
-     <y>563</y>
+     <x>345</x>
+     <y>586</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>autoRange1d</sender>
+   <signal>clicked()</signal>
+   <receiver>yminR</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>447</x>
+     <y>603</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>448</x>
+     <y>641</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>autoRange1d</sender>
+   <signal>clicked()</signal>
+   <receiver>ymaxR</receiver>
+   <slot>clear()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>413</x>
+     <y>598</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>434</x>
+     <y>677</y>
     </hint>
    </hints>
   </connection>
