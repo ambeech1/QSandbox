@@ -15,6 +15,9 @@ public:
     explicit TISEMainWindow(QWidget *parent = nullptr);
     ~TISEMainWindow();
 
+protected:
+    virtual void resizeEvent(QResizeEvent *);
+
 private slots:
     void on_tise1DTabInfo_clicked();
 
@@ -62,15 +65,9 @@ private slots:
 
     void on_showAxisLabels_2_stateChanged(int arg1);
 
-    void on_showLegend_2_stateChanged(int arg1);
-
     void on_showColormap_stateChanged(int arg1);
 
-    void on_showXTicks_2_stateChanged(int arg1);
-
-    void on_showYTicksL_2_stateChanged(int arg1);
-
-    void on_moveLegend_clicked();
+    void on_showTicks_stateChanged(int arg1);
 
     void on_lineEdit_8_textChanged(const QString &arg1);
 

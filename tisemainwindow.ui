@@ -118,7 +118,7 @@ Equation
               </sizepolicy>
              </property>
              <property name="currentIndex">
-              <number>3</number>
+              <number>0</number>
              </property>
              <widget class="QWidget" name="plotsettings">
               <attribute name="title">
@@ -230,16 +230,16 @@ Equation
                     </widget>
                    </item>
                    <item>
-                    <widget class="QCheckBox" name="showGrid">
+                    <widget class="QCheckBox" name="showAxes">
                      <property name="text">
-                      <string>Show Grid</string>
+                      <string>Show Axes</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QCheckBox" name="showAxes">
+                    <widget class="QCheckBox" name="showGrid">
                      <property name="text">
-                      <string>Show Axes</string>
+                      <string>Show Grid</string>
                      </property>
                     </widget>
                    </item>
@@ -769,6 +769,9 @@ Equation
                   <layout class="QGridLayout" name="gridLayout_3" columnstretch="1,1" columnminimumwidth="1,1">
                    <item row="1" column="0">
                     <layout class="QFormLayout" name="formLayout_8">
+                     <property name="formAlignment">
+                      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+                     </property>
                      <item row="0" column="0">
                       <widget class="QLabel" name="label_14">
                        <property name="text">
@@ -793,6 +796,9 @@ Equation
                    </item>
                    <item row="0" column="0">
                     <layout class="QFormLayout" name="formLayout_9">
+                     <property name="formAlignment">
+                      <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+                     </property>
                      <item row="0" column="0">
                       <widget class="QLabel" name="label_16">
                        <property name="text">
@@ -845,9 +851,9 @@ Range</string>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QCheckBox" name="showLegend_2">
+                    <widget class="QCheckBox" name="showTicks">
                      <property name="text">
-                      <string>Show Legend</string>
+                      <string>Show Ticks</string>
                      </property>
                     </widget>
                    </item>
@@ -858,36 +864,25 @@ Range</string>
                      </property>
                     </widget>
                    </item>
-                   <item>
-                    <widget class="QCheckBox" name="showXTicks_2">
-                     <property name="text">
-                      <string>Show x Ticks</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QCheckBox" name="showYTicksL_2">
-                     <property name="text">
-                      <string>Show y Ticks</string>
-                     </property>
-                    </widget>
-                   </item>
                   </layout>
                  </item>
                  <item>
                   <layout class="QVBoxLayout" name="verticalLayout_20">
                    <item>
-                    <widget class="QPushButton" name="moveLegend">
-                     <property name="text">
-                      <string>Move Legend</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
                     <layout class="QFormLayout" name="formLayout_10">
                      <property name="formAlignment">
                       <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
                      </property>
+                     <item row="0" column="1">
+                      <widget class="QLineEdit" name="lineEdit_8">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                      </widget>
+                     </item>
                      <item row="0" column="0">
                       <widget class="QLabel" name="label_19">
                        <property name="text">
@@ -896,9 +891,6 @@ Aspect
 Ratio</string>
                        </property>
                       </widget>
-                     </item>
-                     <item row="0" column="1">
-                      <widget class="QLineEdit" name="lineEdit_8"/>
                      </item>
                     </layout>
                    </item>
@@ -915,7 +907,7 @@ Ratio</string>
                       <x>0</x>
                       <y>0</y>
                       <width>160</width>
-                      <height>125</height>
+                      <height>107</height>
                      </rect>
                     </property>
                    </widget>

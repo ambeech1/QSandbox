@@ -9,13 +9,16 @@ TISEMainWindow::TISEMainWindow(QWidget *parent)
 {
     // set up default tab and widget settings
     ui->setupUi(this);
+    ui->tabDSelect->setCurrentIndex(0);
     ui->tabs1d->setCurrentIndex(0);
     ui->tabs2d->setCurrentIndex(0);
     ui->showAxisLabels->setChecked(true);
+    ui->showAxisLabels_2->setChecked(true);
     ui->showLegend->setChecked(true);
     ui->showXTicks->setChecked(true);
     ui->showYTicksL->setChecked(true);
     ui->showYTicksR->setChecked(true);
+    ui->showTicks->setChecked(true);
     ui->showGrid->setChecked(true);
     ui->showAxes->setChecked(true);
 
@@ -47,34 +50,42 @@ TISEMainWindow::TISEMainWindow(QWidget *parent)
     ui->TISEPlot1D->xAxis->grid()->setSubGridVisible(true);
     ui->TISEPlot1D->yAxis->grid()->setSubGridVisible(true);
 
+    // set up colorbar (2D)
 
 
-    /**
-    ui->TISEPlot2D->addGraph();
-    ui->TISEPlot2D->graph()->setLineStyle(QCPGraph::lsLine);
-    ui->TISEPlot2D->xAxis->setLabel("Position");
-    ui->TISEPlot2D->yAxis->setLabel("Wavefunction");
-    ui->TISEPlot2D->yAxis2->setLabel("Potential Energy");
+    // set up plot (2D)
+    ui->TISEPlot2D->addGraph(ui->TISEPlot2D->xAxis, ui->TISEPlot2D->yAxis);
+    ui->TISEPlot2D->xAxis->setLabel("Position (x)");
+    ui->TISEPlot2D->yAxis->setLabel("Position (y)");
     ui->TISEPlot2D->xAxis->setRange(-10, 10);
     ui->TISEPlot2D->yAxis->setRange(-7, 7);
     ui->TISEPlot2D->yAxis2->setRange(-7, 7);
-    */
+    ui->TISEPlot2D->xAxis->grid()->setZeroLinePen(QPen(QColor(255, 255, 255, 100), 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+    ui->TISEPlot2D->yAxis->grid()->setZeroLinePen(QPen(QColor(255, 255, 255, 100), 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+    ui->TISEPlot2D->xAxis->grid()->setPen(QPen(QColor(255, 255, 255, 100), 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+    ui->TISEPlot2D->yAxis->grid()->setPen(QPen(QColor(255, 255, 255, 100), 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
 }
 
-// 1D
 TISEMainWindow::~TISEMainWindow()
 {
     delete ui;
 }
 
+// maintain axes aspect ratio
+void TISEMainWindow::resizeEvent(QResizeEvent *event) {
+    QDialog::resizeEvent(event);
+    QCPAxis *x = ui->TISEPlot2D->axisRect()->axis(QCPAxis::atBottom);
+    QCPAxis *y = ui->TISEPlot2D->axisRect()->axis(QCPAxis::atLeft);
+    y->setScaleRatio(x, 1.0);
+    ui->TISEPlot2D->replot();
+    ui->TISEPlot2D->update();
+}
+
+// 1D
+
 void TISEMainWindow::on_tise1DTabInfo_clicked()
 {
     QMessageBox::about(this, "Tab Descriptions", "Plot Settings: Adjust the appearance and axis ranges of the plot window.\n\nPotential Energy: Configure the desired potential energy function and boundary conditions.\n\nSolution Parameters: Adjust the accuracy of the solution, as well as particle mass and the scale of Planck's constant.\n\nDisplay: Choose what variables should appear on the plot.\n\nManage Solutions: Show and hide previously found solutions, and save desired solutions to be viewed and manipulated in the TDSE module.");
-}
-
-void TISEMainWindow::on_pushButton_2_clicked()
-{
-    QMessageBox::about(this, "Tab Descriptions", "Plot Settings: Adjust the appearance and axis ranges of the plot window.\n\nPotential Energy: Configure the desired potential energy function and boundary conditions. Specify a spin-dependency if desired.\n\nSolution Parameters: Adjust the accuracy of the solution, as well as particle mass and the scale of Planck's constant.\n\nDisplay: Choose what variables should appear on the plot.\n\nManage Solutions: Show and hide previously found solutions, and save desired solutions to be viewed and manipulated in the TDSE module.\n\nSpin Parameters: Configure the spin components of the wavefunction, if desired.");
 }
 
 void TISEMainWindow::on_xmin_textChanged(const QString &arg1)
@@ -341,59 +352,133 @@ void TISEMainWindow::on_pushButton_clicked()
 
 
 // 2D
+void TISEMainWindow::on_pushButton_2_clicked()
+{
+    QMessageBox::about(this, "Tab Descriptions", "Plot Settings: Adjust the appearance and axis ranges of the plot window.\n\nPotential Energy: Configure the desired potential energy function and boundary conditions. Specify a spin-dependency if desired.\n\nSolution Parameters: Adjust the accuracy of the solution, as well as particle mass and the scale of Planck's constant.\n\nDisplay: Choose what variables should appear on the plot.\n\nManage Solutions: Show and hide previously found solutions, and save desired solutions to be viewed and manipulated in the TDSE module.\n\nSpin Parameters: Configure the spin components of the wavefunction, if desired.");
+}
+
 void TISEMainWindow::on_xmin_2_textChanged(const QString &arg1)
-{}
+{
+    if (arg1 == "") {
+        ui->TISEPlot2D->xAxis->setRangeLower(-10);
+        ui->TISEPlot2D->replot();
+        ui->TISEPlot2D->update();
+    }
+    else {
+        double xmin = arg1.toDouble();
+        ui->TISEPlot2D->xAxis->setRangeLower(xmin);
+        ui->TISEPlot2D->replot();
+        ui->TISEPlot2D->update();
+    }
+}
 
 void TISEMainWindow::on_xmax_2_textChanged(const QString &arg1)
-{}
+{
+    if (arg1 == "") {
+        ui->TISEPlot2D->xAxis->setRangeUpper(10);
+        ui->TISEPlot2D->replot();
+        ui->TISEPlot2D->update();
+    }
+    else {
+        double xmax = arg1.toDouble();
+        ui->TISEPlot2D->xAxis->setRangeUpper(xmax);
+        ui->TISEPlot2D->replot();
+        ui->TISEPlot2D->update();
+    }
+}
 
 void TISEMainWindow::on_ymin_2_textChanged(const QString &arg1)
 {
-
+    if (arg1 == "") {
+        ui->TISEPlot2D->yAxis->setRangeLower(-7);
+        ui->TISEPlot2D->replot();
+        ui->TISEPlot2D->update();
+    }
+    else {
+        double ymin = arg1.toDouble();
+        ui->TISEPlot2D->yAxis->setRangeLower(ymin);
+        ui->TISEPlot2D->replot();
+        ui->TISEPlot2D->update();
+    }
 }
 
 void TISEMainWindow::on_ymax_2_textChanged(const QString &arg1)
 {
-
+    if (arg1 == "") {
+        ui->TISEPlot2D->yAxis->setRangeUpper(7);
+        ui->TISEPlot2D->replot();
+        ui->TISEPlot2D->update();
+    }
+    else {
+        double ymax = arg1.toDouble();
+        ui->TISEPlot2D->yAxis->setRangeUpper(ymax);
+        ui->TISEPlot2D->replot();
+        ui->TISEPlot2D->update();
+    }
 }
 
 void TISEMainWindow::on_autoRange1d_2_clicked()
 {
-
+    if (ui->TISEPlot2D->itemCount() == 0) {
+        ui->TISEPlot2D->xAxis->setRange(-10, 10);
+        ui->TISEPlot2D->yAxis->setRange(-7, 7);
+        ui->TISEPlot2D->replot();
+        ui->TISEPlot2D->update();
+    }
+    else {
+        ui->TISEPlot2D->rescaleAxes();
+        ui->TISEPlot2D->replot();
+        ui->TISEPlot2D->update();
+    }
 }
 
 void TISEMainWindow::on_showAxisLabels_2_stateChanged(int arg1)
 {
-
+    if (ui->showAxisLabels_2->isChecked()) {
+        ui->TISEPlot2D->xAxis->setLabel("Position (x)");
+        ui->TISEPlot2D->yAxis->setLabel("Position (y)");
+        ui->TISEPlot2D->replot();
+        ui->TISEPlot2D->update();
+    }
+    else {
+        ui->TISEPlot2D->xAxis->setLabel("");
+        ui->TISEPlot2D->yAxis->setLabel("");
+        ui->TISEPlot2D->replot();
+        ui->TISEPlot2D->update();
+    }
 }
 
+/**
 void TISEMainWindow::on_showLegend_2_stateChanged(int arg1)
 {
 
 }
+*/
 
 void TISEMainWindow::on_showColormap_stateChanged(int arg1)
 {
 
 }
 
-void TISEMainWindow::on_showXTicks_2_stateChanged(int arg1)
+void TISEMainWindow::on_showTicks_stateChanged(int arg1)
 {
-
-}
-
-void TISEMainWindow::on_showYTicksL_2_stateChanged(int arg1)
-{
-
-}
-
-void TISEMainWindow::on_moveLegend_clicked()
-{
-
+    if (ui->showTicks->isChecked()) {
+        ui->TISEPlot2D->xAxis->setTicks(true);
+        ui->TISEPlot2D->yAxis->setTicks(true);
+        ui->TISEPlot2D->replot();
+        ui->TISEPlot2D->update();
+    }
+    else {
+        ui->TISEPlot2D->xAxis->setTicks(false);
+        ui->TISEPlot2D->yAxis->setTicks(false);
+        ui->TISEPlot2D->replot();
+        ui->TISEPlot2D->update();
+    }
 }
 
 void TISEMainWindow::on_lineEdit_8_textChanged(const QString &arg1)
 {
 
 }
+
 
