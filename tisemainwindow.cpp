@@ -2,6 +2,7 @@
 #include "ui_tisemainwindow.h"
 
 int legendPosInd;
+double tickAspectRatio = 1.0;
 
 TISEMainWindow::TISEMainWindow(QWidget *parent)
     : QDialog(parent)
@@ -64,6 +65,16 @@ TISEMainWindow::TISEMainWindow(QWidget *parent)
     ui->TISEPlot2D->yAxis->grid()->setZeroLinePen(QPen(QColor(255, 255, 255, 100), 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
     ui->TISEPlot2D->xAxis->grid()->setPen(QPen(QColor(255, 255, 255, 100), 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
     ui->TISEPlot2D->yAxis->grid()->setPen(QPen(QColor(255, 255, 255, 100), 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+
+
+    QVector<double> x(5000), y(5000);
+    for (int i = 0; i < 5000; i++) {
+        x[i] = 2 * qCos(2 * 3.14159265 * i / 5000);
+        y[i] = 2 * qSin(2 * 3.14159265 * i / 5000);
+    }
+    ui->TISEPlot2D->graph(0)->setData(x, y);
+    ui->TISEPlot2D->replot();
+    ui->TISEPlot2D->update();
 }
 
 TISEMainWindow::~TISEMainWindow()
@@ -76,7 +87,7 @@ void TISEMainWindow::resizeEvent(QResizeEvent *event) {
     QDialog::resizeEvent(event);
     QCPAxis *x = ui->TISEPlot2D->axisRect()->axis(QCPAxis::atBottom);
     QCPAxis *y = ui->TISEPlot2D->axisRect()->axis(QCPAxis::atLeft);
-    y->setScaleRatio(x, 1.0);
+    y->setScaleRatio(x, tickAspectRatio);
     ui->TISEPlot2D->replot();
     ui->TISEPlot2D->update();
 }
@@ -478,7 +489,18 @@ void TISEMainWindow::on_showTicks_stateChanged(int arg1)
 
 void TISEMainWindow::on_lineEdit_8_textChanged(const QString &arg1)
 {
-
+    if (arg1 == "") {
+        tickAspectRatio = 1.0;
+        ui->TISEPlot2D->axisRect()->axis(QCPAxis::atLeft)->setScaleRatio(ui->TISEPlot2D->axisRect()->axis(QCPAxis::atBottom), tickAspectRatio);
+        ui->TISEPlot2D->replot();
+        ui->TISEPlot2D->update();
+    }
+    else {
+        tickAspectRatio = arg1.toDouble();
+        ui->TISEPlot2D->axisRect()->axis(QCPAxis::atLeft)->setScaleRatio(ui->TISEPlot2D->axisRect()->axis(QCPAxis::atBottom), tickAspectRatio);
+        ui->TISEPlot2D->replot();
+        ui->TISEPlot2D->update();
+    }
 }
 
 

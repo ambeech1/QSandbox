@@ -1,15 +1,16 @@
 #include "State1D.h"
-#include <complex>
+#include "Complex.h"
+#include <QVector>
 
 State1D::State1D() {}
 
 State1D::~State1D() {}
 
-void State1D::setState(std::vector<std::complex<double>> v) {
+void State1D::setState(QVector<Complex> v) {
     vals = v;
 }
 
-std::vector<std::complex<double>> State1D::getPsi() {
+QVector<Complex> State1D::getPsi() {
     return vals;
 }
 

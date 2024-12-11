@@ -2,18 +2,19 @@
 #define STATE1D_H
 
 #include "State.h"
-#include <complex>
+#include "Complex.h"
 #include <vector>
+#include <QVector>
 
 class State1D : public State {
     private:
         const int dim = 1;
-        std::vector<std::complex<double>> vals;
+        QVector<Complex> vals;
     public:
         State1D();
         ~State1D();
-        void setState(std::vector<std::complex<double>> v);
-        std::vector<std::complex<double>> getPsi();
+        void setState(QVector<Complex> v);
+        QVector<Complex> getPsi();
         std::vector<double> getReal();
         std::vector<double> getImag();
         std::vector<double> getNorm();
