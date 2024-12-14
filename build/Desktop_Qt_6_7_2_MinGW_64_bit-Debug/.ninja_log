@@ -1,0 +1,100 @@
+# ninja log v6
+43	890	7556654222444259	QuantumSandbox_autogen/timestamp	759bfa200787c6a0
+43	890	7556654222444259	QuantumSandbox_autogen/mocs_compilation.cpp	759bfa200787c6a0
+43	890	7556654222444259	C:/Users/Aidan Beecher/Desktop/Qt Projects/QuantumSandbox/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/QuantumSandbox_autogen/timestamp	759bfa200787c6a0
+43	890	7556654222444259	C:/Users/Aidan Beecher/Desktop/Qt Projects/QuantumSandbox/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/QuantumSandbox_autogen/mocs_compilation.cpp	759bfa200787c6a0
+2117	2385	7556607737351640	CMakeFiles/QuantumSandbox.dir/State.cpp.obj	da3302f4248598e1
+2129	2210	7556607737472521	CMakeFiles/QuantumSandbox.dir/TDSE_2D.cpp.obj	dee7b2bcd32a1d2e
+2125	2206	7556607737432434	CMakeFiles/QuantumSandbox.dir/TDSE_1D.cpp.obj	a99572362cee131a
+2136	2213	7556607737542674	CMakeFiles/QuantumSandbox.dir/TISE_2D.cpp.obj	46484b96af9c2eee
+2122	3490	7556607737401669	CMakeFiles/QuantumSandbox.dir/State1D.cpp.obj	8758a871f58297b0
+2140	4302	7556607737582692	CMakeFiles/QuantumSandbox.dir/main.cpp.obj	b2dcf483a55bf98e
+898	3482	7556654223614862	CMakeFiles/QuantumSandbox.dir/mainwindow.cpp.obj	3f5471bc3ef974c0
+2114	14271	7556607737321698	CMakeFiles/QuantumSandbox.dir/QuantumSandbox_autogen/mocs_compilation.cpp.obj	d3dcc0c8f5415110
+2133	3399	7556607737507524	CMakeFiles/QuantumSandbox.dir/TISE_1D.cpp.obj	31f9f8ac3e1bd00e
+23604	67287	7556607952213916	QuantumSandbox.exe	8e3eec0d1b91c257
+16	1310	7556661544237162	build.ninja	cf07744a5bdf13e
+2155	9109	7556607737727092	CMakeFiles/QuantumSandbox.dir/tdsemainwindow.cpp.obj	63120d0a3d7fa0af
+2160	9227	7556607737781090	CMakeFiles/QuantumSandbox.dir/tisemainwindow.cpp.obj	45225d4e05bbcaf7
+914	984	7556654223780004	CMakeFiles/QuantumSandbox.dir/Potential.cpp.obj	4f6cf08a35150b9
+2150	23603	7556607737687088	CMakeFiles/QuantumSandbox.dir/qcustomplot.cpp.obj	2885f257c79823e3
+919	993	7556654223820041	CMakeFiles/QuantumSandbox.dir/potential2.cpp.obj	71cee1b70b1a9149
+46	2309	7556661634098319	QuantumSandbox_autogen/timestamp	759bfa200787c6a0
+46	2309	7556661634098319	QuantumSandbox_autogen/mocs_compilation.cpp	759bfa200787c6a0
+46	2309	7556661634098319	C:/Users/Aidan Beecher/Desktop/Qt Projects/QuantumSandbox/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/QuantumSandbox_autogen/timestamp	759bfa200787c6a0
+46	2309	7556661634098319	C:/Users/Aidan Beecher/Desktop/Qt Projects/QuantumSandbox/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/QuantumSandbox_autogen/mocs_compilation.cpp	759bfa200787c6a0
+2325	2422	7556661635242904	CMakeFiles/QuantumSandbox.dir/TDSE_2D.cpp.obj	8c6378d723584029
+2321	2432	7556661635199228	CMakeFiles/QuantumSandbox.dir/TDSE_1D.cpp.obj	809f659da9201477
+2333	2445	7556661635319759	CMakeFiles/QuantumSandbox.dir/TISE_2D.cpp.obj	32038a0590b52994
+2373	2473	7556661635725696	CMakeFiles/QuantumSandbox.dir/potential2.cpp.obj	73cf85546b3de4cb
+2368	2476	7556661635672074	CMakeFiles/QuantumSandbox.dir/Potential.cpp.obj	d86dbaa32a0a8b0a
+2314	2603	7556661635129260	CMakeFiles/QuantumSandbox.dir/State.cpp.obj	5d07c676bc4deed0
+2329	3724	7556661635272900	CMakeFiles/QuantumSandbox.dir/TISE_1D.cpp.obj	69698848c0faa33f
+2317	3831	7556661635159118	CMakeFiles/QuantumSandbox.dir/State1D.cpp.obj	d32975cdebd680d1
+2343	4797	7556661635425838	CMakeFiles/QuantumSandbox.dir/mainwindow.cpp.obj	4529d56144d4a7a8
+2339	5385	7556661635376201	CMakeFiles/QuantumSandbox.dir/main.cpp.obj	7c70135e46df1a74
+2358	9596	7556661635577670	CMakeFiles/QuantumSandbox.dir/tdsemainwindow.cpp.obj	d8f4ff9213da22d1
+2363	9696	7556661635622083	CMakeFiles/QuantumSandbox.dir/tisemainwindow.cpp.obj	d7019c11d496e222
+2310	15110	7556661635093994	CMakeFiles/QuantumSandbox.dir/QuantumSandbox_autogen/mocs_compilation.cpp.obj	5628e94c186bbfb1
+2348	25145	7556661635475910	CMakeFiles/QuantumSandbox.dir/qcustomplot.cpp.obj	987156d51ff9a91b
+25145	71375	7556661863440768	QuantumSandbox.exe	a445d1d48e34349
+81	458	7558090976642598	QuantumSandbox_autogen/timestamp	759bfa200787c6a0
+81	458	7558090976642598	QuantumSandbox_autogen/mocs_compilation.cpp	759bfa200787c6a0
+81	458	7558090976642598	C:/Users/Aidan Beecher/Desktop/Qt Projects/QuantumSandbox/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/QuantumSandbox_autogen/timestamp	759bfa200787c6a0
+81	458	7558090976642598	C:/Users/Aidan Beecher/Desktop/Qt Projects/QuantumSandbox/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/QuantumSandbox_autogen/mocs_compilation.cpp	759bfa200787c6a0
+483	630	7558090980618354	CMakeFiles/QuantumSandbox.dir/Potential.cpp.obj	d86dbaa32a0a8b0a
+460	1095	7558090980299438	CMakeFiles/QuantumSandbox.dir/State.cpp.obj	5d07c676bc4deed0
+470	5548	7558090980461205	CMakeFiles/QuantumSandbox.dir/mainwindow.cpp.obj	4529d56144d4a7a8
+466	7286	7558090980461205	CMakeFiles/QuantumSandbox.dir/main.cpp.obj	7c70135e46df1a74
+474	12745	7558090980565420	CMakeFiles/QuantumSandbox.dir/tdsemainwindow.cpp.obj	d8f4ff9213da22d1
+478	12833	7558090980618354	CMakeFiles/QuantumSandbox.dir/tisemainwindow.cpp.obj	d7019c11d496e222
+12833	54002	7558091104111355	QuantumSandbox.exe	a445d1d48e34349
+50	296	7558281045843616	QuantumSandbox_autogen/timestamp	759bfa200787c6a0
+50	296	7558281045843616	QuantumSandbox_autogen/mocs_compilation.cpp	759bfa200787c6a0
+50	296	7558281045843616	C:/Users/Aidan Beecher/Desktop/Qt Projects/QuantumSandbox/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/QuantumSandbox_autogen/timestamp	759bfa200787c6a0
+50	296	7558281045843616	C:/Users/Aidan Beecher/Desktop/Qt Projects/QuantumSandbox/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/QuantumSandbox_autogen/mocs_compilation.cpp	759bfa200787c6a0
+309	369	7558281048365990	CMakeFiles/QuantumSandbox.dir/Potential.cpp.obj	d86dbaa32a0a8b0a
+297	2183	7558281048322195	CMakeFiles/QuantumSandbox.dir/mainwindow.cpp.obj	4529d56144d4a7a8
+301	6189	7558281048343458	CMakeFiles/QuantumSandbox.dir/tdsemainwindow.cpp.obj	d8f4ff9213da22d1
+305	6405	7558281048365990	CMakeFiles/QuantumSandbox.dir/tisemainwindow.cpp.obj	d7019c11d496e222
+6405	47381	7558281109406167	QuantumSandbox.exe	a445d1d48e34349
+35	240	7558281673078527	QuantumSandbox_autogen/timestamp	759bfa200787c6a0
+35	240	7558281673078527	QuantumSandbox_autogen/mocs_compilation.cpp	759bfa200787c6a0
+35	240	7558281673078527	C:/Users/Aidan Beecher/Desktop/Qt Projects/QuantumSandbox/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/QuantumSandbox_autogen/timestamp	759bfa200787c6a0
+35	240	7558281673078527	C:/Users/Aidan Beecher/Desktop/Qt Projects/QuantumSandbox/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/QuantumSandbox_autogen/mocs_compilation.cpp	759bfa200787c6a0
+240	1889	7558281675132396	CMakeFiles/QuantumSandbox.dir/mainwindow.cpp.obj	4529d56144d4a7a8
+244	5491	7558281675172460	CMakeFiles/QuantumSandbox.dir/tdsemainwindow.cpp.obj	d8f4ff9213da22d1
+247	5621	7558281675202495	CMakeFiles/QuantumSandbox.dir/tisemainwindow.cpp.obj	d7019c11d496e222
+5621	45895	7558281728830919	QuantumSandbox.exe	a445d1d48e34349
+14	186	7558285279531869	QuantumSandbox_autogen/timestamp	759bfa200787c6a0
+14	186	7558285279531869	QuantumSandbox_autogen/mocs_compilation.cpp	759bfa200787c6a0
+14	186	7558285279531869	C:/Users/Aidan Beecher/Desktop/Qt Projects/QuantumSandbox/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/QuantumSandbox_autogen/timestamp	759bfa200787c6a0
+14	186	7558285279531869	C:/Users/Aidan Beecher/Desktop/Qt Projects/QuantumSandbox/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/QuantumSandbox_autogen/mocs_compilation.cpp	759bfa200787c6a0
+187	1994	7558285281260136	CMakeFiles/QuantumSandbox.dir/mainwindow.cpp.obj	4529d56144d4a7a8
+191	6033	7558285281294036	CMakeFiles/QuantumSandbox.dir/tdsemainwindow.cpp.obj	d8f4ff9213da22d1
+194	6118	7558285281334033	CMakeFiles/QuantumSandbox.dir/tisemainwindow.cpp.obj	d7019c11d496e222
+6118	46234	7558285340457579	QuantumSandbox.exe	a445d1d48e34349
+36	225	7558286112262424	QuantumSandbox_autogen/timestamp	759bfa200787c6a0
+36	225	7558286112262424	QuantumSandbox_autogen/mocs_compilation.cpp	759bfa200787c6a0
+36	225	7558286112262424	C:/Users/Aidan Beecher/Desktop/Qt Projects/QuantumSandbox/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/QuantumSandbox_autogen/timestamp	759bfa200787c6a0
+36	225	7558286112262424	C:/Users/Aidan Beecher/Desktop/Qt Projects/QuantumSandbox/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/QuantumSandbox_autogen/mocs_compilation.cpp	759bfa200787c6a0
+226	1837	7558286114230436	CMakeFiles/QuantumSandbox.dir/mainwindow.cpp.obj	4529d56144d4a7a8
+229	5418	7558286114261165	CMakeFiles/QuantumSandbox.dir/tdsemainwindow.cpp.obj	d8f4ff9213da22d1
+232	5572	7558286114290578	CMakeFiles/QuantumSandbox.dir/tisemainwindow.cpp.obj	d7019c11d496e222
+5572	45924	7558286167628368	QuantumSandbox.exe	a445d1d48e34349
+30	226	7558287478572363	QuantumSandbox_autogen/timestamp	759bfa200787c6a0
+30	226	7558287478572363	QuantumSandbox_autogen/mocs_compilation.cpp	759bfa200787c6a0
+30	226	7558287478572363	C:/Users/Aidan Beecher/Desktop/Qt Projects/QuantumSandbox/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/QuantumSandbox_autogen/timestamp	759bfa200787c6a0
+30	226	7558287478572363	C:/Users/Aidan Beecher/Desktop/Qt Projects/QuantumSandbox/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/QuantumSandbox_autogen/mocs_compilation.cpp	759bfa200787c6a0
+227	2030	7558287480434413	CMakeFiles/QuantumSandbox.dir/mainwindow.cpp.obj	4529d56144d4a7a8
+230	5812	7558287480474466	CMakeFiles/QuantumSandbox.dir/tdsemainwindow.cpp.obj	d8f4ff9213da22d1
+234	5921	7558287480504466	CMakeFiles/QuantumSandbox.dir/tisemainwindow.cpp.obj	d7019c11d496e222
+5922	46388	7558287537382507	QuantumSandbox.exe	a445d1d48e34349
+15	213	7558290745351950	QuantumSandbox_autogen/timestamp	759bfa200787c6a0
+15	213	7558290745351950	QuantumSandbox_autogen/mocs_compilation.cpp	759bfa200787c6a0
+15	213	7558290745351950	C:/Users/Aidan Beecher/Desktop/Qt Projects/QuantumSandbox/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/QuantumSandbox_autogen/timestamp	759bfa200787c6a0
+15	213	7558290745351950	C:/Users/Aidan Beecher/Desktop/Qt Projects/QuantumSandbox/build/Desktop_Qt_6_7_2_MinGW_64_bit-Debug/QuantumSandbox_autogen/mocs_compilation.cpp	759bfa200787c6a0
+214	2037	7558290747233131	CMakeFiles/QuantumSandbox.dir/mainwindow.cpp.obj	4529d56144d4a7a8
+217	5937	7558290747273135	CMakeFiles/QuantumSandbox.dir/tdsemainwindow.cpp.obj	d8f4ff9213da22d1
+220	6182	7558290747303134	CMakeFiles/QuantumSandbox.dir/tisemainwindow.cpp.obj	d7019c11d496e222
+6182	46853	7558290806879794	QuantumSandbox.exe	a445d1d48e34349
