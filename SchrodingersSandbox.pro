@@ -12,7 +12,7 @@ INCLUDEPATH += $$PWD/Eigen
 INCLUDEPATH += $$PWD/spectra-1.0.1/include
 
 SOURCES += \
-    Complex.cpp \
+    Potential1D.cpp \
     State.cpp \
     State1D.cpp \
     TDSE_1D.cpp \
@@ -26,8 +26,6 @@ SOURCES += \
     tisemainwindow.cpp
 
 HEADERS += \
-    Complex.h \
-    Potential.h \
     Potential1D.h \
     Potential2D.h \
     SpinState.h \
@@ -53,8 +51,9 @@ qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
-# MuParser
-#INCLUDEPATH += $$PWD/libs/muparser/include
-#LIBS += -L$$PWD/libs/muparser/lib
-#LIBS += -lmuparser
-#LIBS += -lmsys-muparser-2
+# MuParserX
+QMAKE_LFLAGS += -static -v
+QMAKE_CXXFLAGS += -static
+
+INCLUDEPATH += $$PWD/libs/muparserx/include
+LIBS += -L$$PWD/libs/muparserx/lib -lmuparserx -static

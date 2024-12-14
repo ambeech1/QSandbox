@@ -2,32 +2,26 @@
 #include <Eigen>
 #include <QApplication>
 
-/**
-#include "muParser.h"
-using namespace mu;
+#include "mpParser.h"
 
-#include <locale>
-#include <codecvt>
-*/
+using namespace mup;
 
 #include <Spectra/SymEigsBase.h>
 
 int main(int argc, char *argv[])
 {
-    /**
-    std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
+    ParserX p;
+    Value val(3.14);
+    Variable var(&val);
+    p.DefineVar("a", var);
 
-    double var_a = 1;
-    mu::Parser p;
-    p.DefineVar(converter.from_bytes("a"), &var_a);
-    p.SetExpr(converter.from_bytes("a*_pi"));
+    p.DefineConst("b", val);
+    p.DefineConst("c", 3.14);
 
-    qDebug() << p.Eval();
-    */
+    p.SetExpr("a = 123");
+    Value result = p.Eval();
 
-
-    // Eigen::Matrix<double, 2, 2> M;
-
+    qDebug() << result.ToString();
 
     QApplication a(argc, argv);
     MainWindow w;

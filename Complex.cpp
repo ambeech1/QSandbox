@@ -125,11 +125,7 @@ Complex ln(double x) {
     return Complex(log(x), 0);
 }
 
-Complex ln(double& x) {
-    return Complex(log(x), 0);
-}
-
-Complex ln(Complex& z) {
+Complex ln(Complex z) {
     return norm(z) + i * arg(z);
 }
 

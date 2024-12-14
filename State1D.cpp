@@ -6,11 +6,11 @@ State1D::State1D() {}
 
 State1D::~State1D() {}
 
-void State1D::setState(QVector<Complex> v) {
+void State1D::setState(QVector<std::complex<double>> v) {
     vals = v;
 }
 
-QVector<Complex> State1D::getPsi() {
+QVector<std::complex<double>> State1D::getPsi() {
     return vals;
 }
 
