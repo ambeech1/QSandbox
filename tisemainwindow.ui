@@ -118,7 +118,7 @@ Equation
               </sizepolicy>
              </property>
              <property name="currentIndex">
-              <number>1</number>
+              <number>2</number>
              </property>
              <widget class="QWidget" name="plotsettings">
               <attribute name="title">
@@ -295,7 +295,7 @@ Equation
                       <x>0</x>
                       <y>0</y>
                       <width>131</width>
-                      <height>107</height>
+                      <height>131</height>
                      </rect>
                     </property>
                    </widget>
@@ -359,9 +359,9 @@ Function</string>
                   <property name="geometry">
                    <rect>
                     <x>0</x>
-                    <y>-23</y>
-                    <width>330</width>
-                    <height>132</height>
+                    <y>0</y>
+                    <width>228</width>
+                    <height>133</height>
                    </rect>
                   </property>
                   <layout class="QVBoxLayout" name="verticalLayout_4">
@@ -397,6 +397,87 @@ Function</string>
                  </widget>
                 </widget>
                </item>
+               <item>
+                <layout class="QFormLayout" name="formLayout_5">
+                 <property name="labelAlignment">
+                  <set>Qt::AlignmentFlag::AlignCenter</set>
+                 </property>
+                 <property name="formAlignment">
+                  <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+                 </property>
+                 <property name="leftMargin">
+                  <number>1</number>
+                 </property>
+                 <property name="rightMargin">
+                  <number>1</number>
+                 </property>
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label_9">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>R</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QLabel" name="label_12">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>G</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="2" column="0">
+                  <widget class="QLabel" name="label_31">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                   <property name="text">
+                    <string>B</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="1">
+                  <widget class="QLineEdit" name="R">
+                   <property name="sizePolicy">
+                    <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+                     <horstretch>0</horstretch>
+                     <verstretch>0</verstretch>
+                    </sizepolicy>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="1">
+                  <widget class="QLineEdit" name="G"/>
+                 </item>
+                 <item row="2" column="1">
+                  <widget class="QLineEdit" name="B"/>
+                 </item>
+                 <item row="3" column="0">
+                  <widget class="QLabel" name="label_32">
+                   <property name="text">
+                    <string>Curve Width</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="3" column="1">
+                  <widget class="QLineEdit" name="curveWidth"/>
+                 </item>
+                </layout>
+               </item>
               </layout>
              </widget>
              <widget class="QWidget" name="solutionparameters">
@@ -405,7 +486,7 @@ Function</string>
               </attribute>
               <layout class="QVBoxLayout" name="verticalLayout_15">
                <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="0,1,1,2">
+                <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="0,1,1">
                  <item>
                   <layout class="QFormLayout" name="formLayout_16">
                    <property name="formAlignment">
@@ -426,10 +507,10 @@ Function</string>
                     </widget>
                    </item>
                    <item row="0" column="1">
-                    <widget class="QLineEdit" name="lineEdit_9"/>
+                    <widget class="QLineEdit" name="xMinSol"/>
                    </item>
                    <item row="1" column="1">
-                    <widget class="QLineEdit" name="lineEdit_10"/>
+                    <widget class="QLineEdit" name="xMaxSol"/>
                    </item>
                   </layout>
                  </item>
@@ -446,7 +527,7 @@ Function</string>
                     </widget>
                    </item>
                    <item row="0" column="1">
-                    <widget class="QLineEdit" name="lineEdit_4"/>
+                    <widget class="QLineEdit" name="posStep"/>
                    </item>
                    <item row="1" column="0">
                     <widget class="QLabel" name="label_13">
@@ -456,7 +537,7 @@ Function</string>
                     </widget>
                    </item>
                    <item row="1" column="1">
-                    <widget class="QLineEdit" name="lineEdit_5"/>
+                    <widget class="QLineEdit" name="prQuNum"/>
                    </item>
                    <item row="2" column="0" colspan="2">
                     <widget class="QCheckBox" name="checkBox_8">
@@ -470,7 +551,7 @@ Function</string>
                  <item>
                   <layout class="QVBoxLayout" name="verticalLayout_14">
                    <item>
-                    <widget class="QPushButton" name="updatePlot1d">
+                    <widget class="QPushButton" name="computeSol">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                        <horstretch>0</horstretch>
@@ -497,19 +578,6 @@ Function</string>
                    </item>
                   </layout>
                  </item>
-                 <item>
-                  <spacer name="horizontalSpacer">
-                   <property name="orientation">
-                    <enum>Qt::Orientation::Horizontal</enum>
-                   </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>40</width>
-                     <height>20</height>
-                    </size>
-                   </property>
-                  </spacer>
-                 </item>
                 </layout>
                </item>
               </layout>
@@ -520,7 +588,7 @@ Function</string>
               </attribute>
               <layout class="QVBoxLayout" name="verticalLayout_18">
                <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="1,1,2">
+                <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="1,1">
                  <item>
                   <layout class="QVBoxLayout" name="verticalLayout_16">
                    <item>
@@ -607,19 +675,6 @@ Function</string>
                     </widget>
                    </item>
                   </layout>
-                 </item>
-                 <item>
-                  <spacer name="horizontalSpacer_4">
-                   <property name="orientation">
-                    <enum>Qt::Orientation::Horizontal</enum>
-                   </property>
-                   <property name="sizeHint" stdset="0">
-                    <size>
-                     <width>40</width>
-                     <height>20</height>
-                    </size>
-                   </property>
-                  </spacer>
                  </item>
                 </layout>
                </item>

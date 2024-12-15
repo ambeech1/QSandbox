@@ -3,6 +3,8 @@
 #include "Potential1D.h"
 #include "VecQVecConvert.cpp"
 #include <QVector>
+#include <QPen>
+#include <QColor>
 
 int legendPosInd;
 double tickAspectRatio = 1.0;
@@ -18,6 +20,11 @@ double xmax1Dsol = 10;
 int N1D = 501;
 
 Potential1D Pot1D;
+QPen pot1Dpen;
+int pot1DpenR = 0;
+int pot1DpenG = 0;
+int pot1DpenB = 0;
+int pot1DpenLw = 2;
 
 TISEMainWindow::TISEMainWindow(QWidget *parent)
     : QDialog(parent)
@@ -57,7 +64,9 @@ TISEMainWindow::TISEMainWindow(QWidget *parent)
     ui->TISEPlot1D->graph(0)->setLineStyle(QCPGraph::lsLine);
     ui->TISEPlot1D->graph(0)->setName("Wavefunction");
     ui->TISEPlot1D->addGraph(ui->TISEPlot1D->xAxis, ui->TISEPlot1D->yAxis2);
-    ui->TISEPlot1D->graph(1)->setPen(QPen(QColor(0, 255, 100)));
+    pot1Dpen.setColor(QColor(pot1DpenR, pot1DpenG, pot1DpenB));
+    pot1Dpen.setWidthF(pot1DpenLw);
+    ui->TISEPlot1D->graph(1)->setPen(pot1Dpen);
     ui->TISEPlot1D->graph(1)->setLineStyle(QCPGraph::lsLine);
     ui->TISEPlot1D->graph(1)->setName("Potential Energy");
     ui->TISEPlot1D->xAxis->setLabel("Position");
@@ -562,5 +571,81 @@ void TISEMainWindow::on_quad_clicked()
     ui->TISEPlot1D->graph(1)->setData(X, Y);
     ui->TISEPlot1D->replot();
     ui->TISEPlot1D->update();
+}
+
+
+void TISEMainWindow::on_R_textChanged(const QString &arg1)
+{
+    if (arg1 == "") {
+        pot1DpenR = 0;
+        pot1Dpen.setColor(QColor(pot1DpenR, pot1DpenG, pot1DpenB));
+        ui->TISEPlot1D->graph(1)->setPen(pot1Dpen);
+        ui->TISEPlot1D->replot();
+        ui->TISEPlot1D->update();
+    }
+    else {
+        pot1DpenR = arg1.toDouble();
+        pot1Dpen.setColor(QColor(pot1DpenR, pot1DpenG, pot1DpenB));
+        ui->TISEPlot1D->graph(1)->setPen(pot1Dpen);
+        ui->TISEPlot1D->replot();
+        ui->TISEPlot1D->update();
+    }
+}
+
+
+void TISEMainWindow::on_G_textChanged(const QString &arg1)
+{
+    if (arg1 == "") {
+        pot1DpenG = 0;
+        pot1Dpen.setColor(QColor(pot1DpenR, pot1DpenG, pot1DpenB));
+        ui->TISEPlot1D->graph(1)->setPen(pot1Dpen);
+        ui->TISEPlot1D->replot();
+        ui->TISEPlot1D->update();
+    }
+    else {
+        pot1DpenG = arg1.toDouble();
+        pot1Dpen.setColor(QColor(pot1DpenR, pot1DpenG, pot1DpenB));
+        ui->TISEPlot1D->graph(1)->setPen(pot1Dpen);
+        ui->TISEPlot1D->replot();
+        ui->TISEPlot1D->update();
+    }
+}
+
+
+void TISEMainWindow::on_B_textChanged(const QString &arg1)
+{
+    if (arg1 == "") {
+        pot1DpenB = 0;
+        pot1Dpen.setColor(QColor(pot1DpenR, pot1DpenG, pot1DpenB));
+        ui->TISEPlot1D->graph(1)->setPen(pot1Dpen);
+        ui->TISEPlot1D->replot();
+        ui->TISEPlot1D->update();
+    }
+    else {
+        pot1DpenB = arg1.toDouble();
+        pot1Dpen.setColor(QColor(pot1DpenR, pot1DpenG, pot1DpenB));
+        ui->TISEPlot1D->graph(1)->setPen(pot1Dpen);
+        ui->TISEPlot1D->replot();
+        ui->TISEPlot1D->update();
+    }
+}
+
+
+void TISEMainWindow::on_curveWidth_textChanged(const QString &arg1)
+{
+    if (arg1 == "") {
+        pot1DpenLw = 0;
+        pot1Dpen.setWidthF(pot1DpenLw);
+        ui->TISEPlot1D->graph(1)->setPen(pot1Dpen);
+        ui->TISEPlot1D->replot();
+        ui->TISEPlot1D->update();
+    }
+    else {
+        pot1DpenLw = arg1.toDouble();
+        pot1Dpen.setWidthF(pot1DpenLw);
+        ui->TISEPlot1D->graph(1)->setPen(pot1Dpen);
+        ui->TISEPlot1D->replot();
+        ui->TISEPlot1D->update();
+    }
 }
 

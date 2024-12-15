@@ -79,6 +79,14 @@ private slots:
 
     void on_quad_clicked();
 
+    void on_R_textChanged(const QString &arg1);
+
+    void on_G_textChanged(const QString &arg1);
+
+    void on_B_textChanged(const QString &arg1);
+
+    void on_curveWidth_textChanged(const QString &arg1);
+
 private:
     Ui::TISEMainWindow *ui;
 };
