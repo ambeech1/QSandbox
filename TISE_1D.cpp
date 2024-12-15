@@ -1,24 +1,69 @@
-#include "TISE_1D.h"
+#include <Eigen/Sparse>
+#include <Spectra/SymEigsSolver.h>
+#include <Spectra/MatOp/SparseSymMatProd.h>
+#include <cmath>
+#include <utility>
+#include "Potential1D.h"
 
-#include "Eigen/Eigen"
-#include "Eigen/Eigenvalues"
+std::pair<std::vector<double>, std::vector<std::vector<double>>> solveEigen(int prQuNum, bool upToPr, double xmin, double xmax, int N, Potential1D pot = Potential1D(), double hbar = 1, double m = 0.5) {
+    // instantiate constants
+    double dx = (xmin - xmax) / (N - 1);
+    double A = -(pow(hbar, 2)) / (2 * m);
 
-TISE_1D::TISE_1D() {
+    // instantiate position
+    Eigen::VectorXd x(N);
+    for (int i = 0; i < N; i++) {
+        x(i) = xmin + (i * dx);
+    }
 
-}
+    // instantiate potential energy
+    std::vector<double> v = pot.getPot();
+    Eigen::VectorXd V(N);
+    for (int i = 0; i < N; i++) {
+        V(i) = v[i];
+    }
 
-TISE_1D::~TISE_1D() {
+    // instantiate Hamiltonian
+    Eigen::SparseMatrix<double> H(N, N);
+    H.reserve(3 * N - 2);
+    for (int i = 0; i < N; i++) {
+        H.insert(i, i) = V(i) - (2.0 * A / pow(dx, 2));
+    }
+    for (int i = 0; i < N - 1; i++) {
+        H.insert(i, i + 1) = A / pow(dx, 2);
+        H.insert(i + 1, i) = A / pow(dx, 2);
+    }
 
-}
+    Spectra::SparseSymMatProd<double> op(H);
+    Spectra::SymEigsSolver<Spectra::SparseSymMatProd<double>> eigs(op, prQuNum, N);
+    eigs.init();
+    int nconv = eigs.compute(Spectra::SortRule::SmallestMagn);
 
-QVector<double> TISE_1D::computeEnergies() {
+    // get eigenvalues
+    Eigen::VectorXd eigenvalues = eigs.eigenvalues();
+    std::vector<double> evals;
+    if (upToPr) {
+        for (int i = 0; i < prQuNum; i++) {
+            evals.push_back(eigenvalues[i]);
+        }
+    }
+    else {
+        evals.push_back(eigenvalues[prQuNum - 1]);
+    }
 
-}
+    // get eigenvectors
+    Eigen::MatrixXd eigenvectors = eigs.eigenvectors();
+    std::vector<std::vector<double>> evects;
+    if (upToPr) {
+        for (int i = 0; i < prQuNum; i++) {
+            std::vector<double> stdV(eigenvectors.col(i).real().data(), eigenvectors.col(i).real().data() + eigenvectors.col(i).real().size());
+            evects.push_back(stdV);
+        }
+    }
+    else {
+        std::vector<double> stdV(eigenvectors.col(prQuNum - 1).real().data(), eigenvectors.col(prQuNum - 1).real().data() + eigenvectors.col(prQuNum - 1).real().size());
+        evects.push_back(stdV);
+    }
 
-QVector<QVector<double>> TISE_1D::computeEigenstates() {
-
-}
-
-std::pair<QVector<double>, QVector<QVector<double>>> TISE_1D::computeEigenAll() {
-
+    return std::pair<std::vector<double>, std::vector<std::vector<double>>>(evals, evects);
 }

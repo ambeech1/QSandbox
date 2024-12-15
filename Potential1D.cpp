@@ -98,6 +98,7 @@ void Potential1D::setPosN(double num) {
 
 
 void Potential1D::setPot(FORM p) {
+    form = p;
     switch(p) {
     case infWell:
         fx = InfWell;

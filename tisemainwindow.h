@@ -87,6 +87,18 @@ private slots:
 
     void on_curveWidth_textChanged(const QString &arg1);
 
+    void on_xMinSol_textChanged(const QString &arg1);
+
+    void on_xMaxSol_textChanged(const QString &arg1);
+
+    void on_posStep_textChanged(const QString &arg1);
+
+    void on_prQuNum_textChanged(const QString &arg1);
+
+    void on_computeSol_clicked();
+
+    void on_checkBox_8_stateChanged(int arg1);
+
 private:
     Ui::TISEMainWindow *ui;
 };

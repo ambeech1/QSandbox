@@ -15,8 +15,6 @@ SOURCES += \
     Potential1D.cpp \
     State.cpp \
     State1D.cpp \
-    TDSE_1D.cpp \
-    TDSE_2D.cpp \
     TISE_1D.cpp \
     TISE_2D.cpp \
     VecQVecConvert.cpp \
@@ -34,7 +32,6 @@ HEADERS += \
     State.h \
     State1D.h \
     State2D.h \
-    TISE_1D.h \
     mainwindow.h \
     qcustomplot.h \
     tdsemainwindow.h \
