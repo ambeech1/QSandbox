@@ -1,15 +1,16 @@
 #include "mainwindow.h"
-#include <Eigen>
+#include <Eigen/Dense>
 #include <QApplication>
 
-#include "mpParser.h"
+// #include "mpParser.h"
 
-using namespace mup;
+// using namespace mup;
 
 #include <Spectra/SymEigsBase.h>
 
 int main(int argc, char *argv[])
 {
+    /**
     ParserX p;
     Value val(3.14);
     Variable var(&val);
@@ -22,6 +23,7 @@ int main(int argc, char *argv[])
     Value result = p.Eval();
 
     qDebug() << result.ToString();
+    */
 
     QApplication a(argc, argv);
     MainWindow w;

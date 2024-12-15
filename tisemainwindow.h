@@ -71,6 +71,14 @@ private slots:
 
     void on_lineEdit_8_textChanged(const QString &arg1);
 
+    void on_infWel_clicked();
+
+    void on_fWell_clicked();
+
+    void on_barrier_clicked();
+
+    void on_quad_clicked();
+
 private:
     Ui::TISEMainWindow *ui;
 };

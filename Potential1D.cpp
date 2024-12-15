@@ -1,22 +1,22 @@
 #include "Potential1D.h"
+#include <vector>
+#include <cmath>
 
-template <typename x, typename V>
-V InfWell(x POS) {
-    V POT;
+std::vector<double> InfWell(std::vector<double> POS) {
+    std::vector<double> POT(POS.size());
     for (int i = 0; i < POS.size(); i++) {
         if (abs(POS[i]) < 5) {
             POT[i] = 0;
         }
         else {
-            POT[i] = 1000000;
+            POT[i] = 1000000000;
         }
     }
     return POT;
 }
 
-template <typename x, typename V>
-V FWell(x POS) {
-    V POT;
+std::vector<double> FWell(std::vector<double> POS) {
+    std::vector<double> POT(POS.size());
     for (int i = 0; i < POS.size(); i++) {
         if (abs(POS[i]) < 5) {
             POT[i] = 0;
@@ -28,9 +28,8 @@ V FWell(x POS) {
     return POT;
 }
 
-template <typename x, typename V>
-V Barrier(x POS) {
-    V POT;
+std::vector<double> Barrier(std::vector<double> POS) {
+    std::vector<double> POT(POS.size());
     for (int i = 0; i < POS.size(); i++) {
         if (abs(POS[i]) < 0.5) {
             POT[i] = 50;
@@ -42,9 +41,8 @@ V Barrier(x POS) {
     return POT;
 }
 
-template <typename x, typename V>
-V Quad(x POS) {
-    V POT;
+std::vector<double> Quad(std::vector<double> POS) {
+    std::vector<double> POT(POS.size());
     for (int i = 0; i < POS.size(); i++) {
         POT[i] = pow(POS[i], 2) / 5;
     }
@@ -53,41 +51,53 @@ V Quad(x POS) {
 
 
 
-template <typename x, typename V>
-Potential1D<x, V>::Potential1D() : xmin(-10), xmax(10), N(101), fx(InfWell) {}
 
-template <typename x, typename V>
-Potential1D<x, V>::Potential1D(double min, double max, double num) : xmin(min), xmax(max), N(num), fx(InfWell) {
+Potential1D::Potential1D() : xmin(-10), xmax(10), N(101), fx(InfWell), form(infWell) {
+    dx = (xmax - xmin) / (N - 1);
     setPos();
-    pot = new V(invoke(pos, fx));
+    setPot(form);
 }
 
-template <typename x, typename V>
-Potential1D<x, V>::Potential1D(double min, double max, FORM p) : xmin(min), xmax(max) {
 
+Potential1D::Potential1D(double min, double max, double num) : xmin(min), xmax(max), N(num), fx(InfWell), form(infWell) {
+    dx = (xmax - xmin) / (N - 1);
+    setPos();
+    setPot(form);
 }
 
-template <typename x, typename V>
-void Potential1D<x, V>::setPosMin(double min) {
+
+Potential1D::Potential1D(double min, double max, double num, FORM p) : xmin(min), N(num), xmax(max), form(p) {
+    dx = (xmax - xmin) / (N - 1);
+    setPos();
+    setPot(form);
+}
+
+
+void Potential1D::setPosMin(double min) {
     xmin = min;
+    dx = (xmax - xmin) / (N - 1);
     setPos();
+    setPot(form);
 }
 
-template <typename x, typename V>
-void Potential1D<x, V>::setPosMax(double max) {
+
+void Potential1D::setPosMax(double max) {
     xmax = max;
+    dx = (xmax - xmin) / (N - 1);
     setPos();
+    setPot(form);
 }
 
-template <typename x, typename V>
-void Potential1D<x, V>::setPosN(double num) {
+
+void Potential1D::setPosN(double num) {
     N = num;
+    dx = (xmax - xmin) / (N - 1);
     setPos();
+    setPot(form);
 }
 
-template <typename x, typename V>
-void Potential1D<x, V>::setPot(FORM p) {
-    delete pot;
+
+void Potential1D::setPot(FORM p) {
     switch(p) {
     case infWell:
         fx = InfWell;
@@ -102,31 +112,28 @@ void Potential1D<x, V>::setPot(FORM p) {
         fx = Quad;
         break;
     }
-    pot = new V(invoke(pos, fx));
+    pot = invoke(pos, fx);
 }
 
-template <typename x, typename V>
-V Potential1D<x, V>::getPot() {
+
+std::vector<double> Potential1D::getPos() {
+    return pos;
+}
+
+
+std::vector<double> Potential1D::getPot() {
     return pot;
 }
 
-template <typename x, typename V>
-void Potential1D<x, V>::setPos() {
-    delete pos;
-    delete pot;
-    pos = new x(N);
+
+void Potential1D::setPos() {
+    pos.resize(N);
     for (int i = 0; i < N; i++) {
         pos[i] = xmin + (i * dx);
     }
-    setPot(invoke(pos, fx));
 }
 
-template <typename x, typename V>
-void Potential1D<x, V>::setForm(FORM p) {
-    fx = p;
-}
 
-template <typename x, typename V>
-V Potential1D<x, V>::invoke(x POS, V *func(x POS)) {
+std::vector<double> Potential1D::invoke(std::vector<double> POS, std::vector<double> (*func)(std::vector<double> POS)) {
     return func(POS);
 }

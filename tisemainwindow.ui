@@ -13,7 +13,7 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
-  <layout class="QVBoxLayout" name="verticalLayout_13">
+  <layout class="QVBoxLayout" name="verticalLayout_11">
    <item>
     <widget class="QTabWidget" name="tabDSelect">
      <property name="currentIndex">
@@ -23,7 +23,7 @@
       <attribute name="title">
        <string>1D</string>
       </attribute>
-      <layout class="QVBoxLayout" name="verticalLayout_4">
+      <layout class="QVBoxLayout" name="verticalLayout_12">
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout" stretch="1,4">
          <item>
@@ -351,99 +351,51 @@ Function</string>
                 </layout>
                </item>
                <item>
-                <layout class="QFormLayout" name="formLayout_5">
-                 <property name="formAlignment">
-                  <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+                <widget class="QScrollArea" name="scrollArea_3">
+                 <property name="widgetResizable">
+                  <bool>true</bool>
                  </property>
-                 <item row="0" column="0">
-                  <widget class="QLabel" name="label_9">
-                   <property name="text">
-                    <string>Potential
-Energy
-Units</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="1">
-                  <layout class="QVBoxLayout" name="verticalLayout_11">
+                 <widget class="QWidget" name="scrollAreaWidgetContents_3">
+                  <property name="geometry">
+                   <rect>
+                    <x>0</x>
+                    <y>-23</y>
+                    <width>330</width>
+                    <height>132</height>
+                   </rect>
+                  </property>
+                  <layout class="QVBoxLayout" name="verticalLayout_4">
                    <item>
-                    <widget class="QRadioButton" name="radioButton">
+                    <widget class="QPushButton" name="infWel">
                      <property name="text">
-                      <string>Make Dimensionless</string>
+                      <string>Infinite Well</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QRadioButton" name="radioButton_2">
+                    <widget class="QPushButton" name="fWell">
                      <property name="text">
-                      <string>eV</string>
+                      <string>Finite Well</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QRadioButton" name="radioButton_3">
+                    <widget class="QPushButton" name="barrier">
                      <property name="text">
-                      <string>keV</string>
+                      <string>Barrier</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QRadioButton" name="radioButton_4">
+                    <widget class="QPushButton" name="quad">
                      <property name="text">
-                      <string>MeV</string>
+                      <string>Quadratic</string>
                      </property>
                     </widget>
                    </item>
                   </layout>
-                 </item>
-                </layout>
-               </item>
-               <item>
-                <layout class="QFormLayout" name="formLayout_6">
-                 <property name="formAlignment">
-                  <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
-                 </property>
-                 <item row="0" column="0">
-                  <widget class="QLabel" name="label_12">
-                   <property name="text">
-                    <string>Position
-Units</string>
-                   </property>
-                  </widget>
-                 </item>
-                 <item row="0" column="1">
-                  <layout class="QVBoxLayout" name="verticalLayout_12">
-                   <item>
-                    <widget class="QRadioButton" name="radioButton_5">
-                     <property name="text">
-                      <string>Make Dimensionless</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QRadioButton" name="radioButton_6">
-                     <property name="text">
-                      <string>nm</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QRadioButton" name="radioButton_7">
-                     <property name="text">
-                      <string>um</string>
-                     </property>
-                    </widget>
-                   </item>
-                   <item>
-                    <widget class="QRadioButton" name="radioButton_8">
-                     <property name="text">
-                      <string>mm</string>
-                     </property>
-                    </widget>
-                   </item>
-                  </layout>
-                 </item>
-                </layout>
+                 </widget>
+                </widget>
                </item>
               </layout>
              </widget>
@@ -453,7 +405,34 @@ Units</string>
               </attribute>
               <layout class="QVBoxLayout" name="verticalLayout_15">
                <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="1,1,2">
+                <layout class="QHBoxLayout" name="horizontalLayout_5" stretch="0,1,1,2">
+                 <item>
+                  <layout class="QFormLayout" name="formLayout_16">
+                   <property name="formAlignment">
+                    <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+                   </property>
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="label_27">
+                     <property name="text">
+                      <string>x Min</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
+                    <widget class="QLabel" name="label_28">
+                     <property name="text">
+                      <string>x Max</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <widget class="QLineEdit" name="lineEdit_9"/>
+                   </item>
+                   <item row="1" column="1">
+                    <widget class="QLineEdit" name="lineEdit_10"/>
+                   </item>
+                  </layout>
+                 </item>
                  <item>
                   <layout class="QFormLayout" name="formLayout_7">
                    <property name="formAlignment">
@@ -774,7 +753,7 @@ Equation
               </attribute>
               <layout class="QVBoxLayout" name="verticalLayout_21">
                <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="2,2,2,2,1">
+                <layout class="QHBoxLayout" name="horizontalLayout_7" stretch="2,2,2,2">
                  <item>
                   <layout class="QGridLayout" name="gridLayout_3" columnstretch="1,1" columnminimumwidth="1,1">
                    <item row="1" column="0">
@@ -916,18 +895,11 @@ Ratio</string>
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>160</width>
+                      <width>167</width>
                       <height>107</height>
                      </rect>
                     </property>
                    </widget>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QScrollBar" name="verticalScrollBar_2">
-                   <property name="orientation">
-                    <enum>Qt::Orientation::Vertical</enum>
-                   </property>
                   </widget>
                  </item>
                 </layout>
@@ -1075,7 +1047,54 @@ Units</string>
               </attribute>
               <layout class="QVBoxLayout" name="verticalLayout_25">
                <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="1,1,2">
+                <layout class="QHBoxLayout" name="horizontalLayout_9" stretch="0,1,1,2">
+                 <item>
+                  <layout class="QFormLayout" name="formLayout_15">
+                   <property name="formAlignment">
+                    <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
+                   </property>
+                   <item row="0" column="0">
+                    <widget class="QLabel" name="label_25">
+                     <property name="text">
+                      <string>x Min</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="1" column="0">
+                    <widget class="QLabel" name="label_26">
+                     <property name="text">
+                      <string>x Max</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="0" column="1">
+                    <widget class="QLineEdit" name="lineEdit_11"/>
+                   </item>
+                   <item row="1" column="1">
+                    <widget class="QLineEdit" name="lineEdit_12"/>
+                   </item>
+                   <item row="2" column="0">
+                    <widget class="QLabel" name="label_29">
+                     <property name="text">
+                      <string>y Min</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="3" column="0">
+                    <widget class="QLabel" name="label_30">
+                     <property name="text">
+                      <string>y Max</string>
+                     </property>
+                    </widget>
+                   </item>
+                   <item row="2" column="1">
+                    <widget class="QLineEdit" name="lineEdit_13"/>
+                   </item>
+                   <item row="3" column="1">
+                    <widget class="QLineEdit" name="lineEdit_14"/>
+                   </item>
+                  </layout>
+                 </item>
                  <item>
                   <layout class="QFormLayout" name="formLayout_14">
                    <property name="formAlignment">

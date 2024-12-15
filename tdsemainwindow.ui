@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>986</width>
-    <height>784</height>
+    <width>988</width>
+    <height>644</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,7 +17,7 @@
    <item>
     <widget class="QTabWidget" name="tabDSelect">
      <property name="currentIndex">
-      <number>1</number>
+      <number>0</number>
      </property>
      <widget class="QWidget" name="oneD">
       <attribute name="title">
@@ -75,7 +75,7 @@ Equation
             </spacer>
            </item>
            <item>
-            <widget class="QPushButton" name="updatePlot1d">
+            <widget class="QPushButton" name="updatePlot1dTD">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                <horstretch>0</horstretch>
@@ -114,7 +114,7 @@ Equation
             </spacer>
            </item>
            <item>
-            <widget class="QPushButton" name="tise1DTabInfo">
+            <widget class="QPushButton" name="tdse1DTabInfoTD">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                <horstretch>0</horstretch>
@@ -165,7 +165,7 @@ Equation
               </attribute>
               <layout class="QVBoxLayout" name="verticalLayout_11">
                <item>
-                <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="2,2,2,2,1">
+                <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="2,2,2,2">
                  <item>
                   <layout class="QGridLayout" name="gridLayout" columnstretch="1,1" columnminimumwidth="1,1">
                    <item row="1" column="0">
@@ -181,7 +181,7 @@ Equation
                       </widget>
                      </item>
                      <item row="0" column="1">
-                      <widget class="QLineEdit" name="ymin"/>
+                      <widget class="QLineEdit" name="yminTD"/>
                      </item>
                      <item row="1" column="0">
                       <widget class="QLabel" name="label_6">
@@ -191,7 +191,7 @@ Equation
                       </widget>
                      </item>
                      <item row="1" column="1">
-                      <widget class="QLineEdit" name="ymax"/>
+                      <widget class="QLineEdit" name="ymaxTD"/>
                      </item>
                     </layout>
                    </item>
@@ -208,7 +208,7 @@ Equation
                       </widget>
                      </item>
                      <item row="0" column="1">
-                      <widget class="QLineEdit" name="xmin">
+                      <widget class="QLineEdit" name="xminTD">
                        <property name="text">
                         <string/>
                        </property>
@@ -222,7 +222,7 @@ Equation
                       </widget>
                      </item>
                      <item row="1" column="1">
-                      <widget class="QLineEdit" name="xmax"/>
+                      <widget class="QLineEdit" name="xmaxTD"/>
                      </item>
                     </layout>
                    </item>
@@ -239,7 +239,7 @@ Equation
                       </widget>
                      </item>
                      <item row="0" column="1">
-                      <widget class="QLineEdit" name="yminR"/>
+                      <widget class="QLineEdit" name="yminRTD"/>
                      </item>
                      <item row="1" column="0">
                       <widget class="QLabel" name="label_11">
@@ -249,12 +249,12 @@ Equation
                       </widget>
                      </item>
                      <item row="1" column="1">
-                      <widget class="QLineEdit" name="ymaxR"/>
+                      <widget class="QLineEdit" name="ymaxRTD"/>
                      </item>
                     </layout>
                    </item>
                    <item row="0" column="1">
-                    <widget class="QPushButton" name="autoRange1d">
+                    <widget class="QPushButton" name="autoRange1dTD">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
                        <horstretch>0</horstretch>
@@ -271,28 +271,28 @@ Equation
                  <item>
                   <layout class="QVBoxLayout" name="verticalLayout_9">
                    <item>
-                    <widget class="QCheckBox" name="showAxisLabels">
+                    <widget class="QCheckBox" name="showAxisLabelsTD">
                      <property name="text">
                       <string>Show Axis Labels</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QCheckBox" name="showGrid">
+                    <widget class="QCheckBox" name="showGridTD">
                      <property name="text">
                       <string>Show Grid</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QCheckBox" name="showAxes">
+                    <widget class="QCheckBox" name="showAxesTD">
                      <property name="text">
                       <string>Show Axes</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QCheckBox" name="showLegend">
+                    <widget class="QCheckBox" name="showLegendTD">
                      <property name="text">
                       <string>Show Legend</string>
                      </property>
@@ -303,28 +303,28 @@ Equation
                  <item>
                   <layout class="QVBoxLayout" name="verticalLayout_10">
                    <item>
-                    <widget class="QCheckBox" name="showXTicks">
+                    <widget class="QCheckBox" name="showXTicksTD">
                      <property name="text">
                       <string>Show x Ticks</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QCheckBox" name="showYTicksL">
+                    <widget class="QCheckBox" name="showYTicksLTD">
                      <property name="text">
                       <string>Show y Ticks (Left)</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QCheckBox" name="showYTicksR">
+                    <widget class="QCheckBox" name="showYTicksRTD">
                      <property name="text">
                       <string>Show y Ticks (Right)</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QPushButton" name="pushButton">
+                    <widget class="QPushButton" name="moveLegendTD">
                      <property name="text">
                       <string>Move Legend</string>
                      </property>
@@ -342,18 +342,11 @@ Equation
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>137</width>
-                      <height>152</height>
+                      <width>145</width>
+                      <height>112</height>
                      </rect>
                     </property>
                    </widget>
-                  </widget>
-                 </item>
-                 <item>
-                  <widget class="QScrollBar" name="verticalScrollBar">
-                   <property name="orientation">
-                    <enum>Qt::Orientation::Vertical</enum>
-                   </property>
                   </widget>
                  </item>
                 </layout>
@@ -806,7 +799,7 @@ Equation
             </spacer>
            </item>
            <item>
-            <widget class="QPushButton" name="pushButton_2">
+            <widget class="QPushButton" name="info2DTD">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
                <horstretch>0</horstretch>
@@ -847,7 +840,7 @@ Equation
               </sizepolicy>
              </property>
              <property name="currentIndex">
-              <number>0</number>
+              <number>1</number>
              </property>
              <widget class="QWidget" name="plotsettings_2">
               <attribute name="title">
@@ -871,7 +864,7 @@ Equation
                       </widget>
                      </item>
                      <item row="0" column="1">
-                      <widget class="QLineEdit" name="ymin_2"/>
+                      <widget class="QLineEdit" name="ymin_2TD"/>
                      </item>
                      <item row="1" column="0">
                       <widget class="QLabel" name="label_17">
@@ -881,7 +874,7 @@ Equation
                       </widget>
                      </item>
                      <item row="1" column="1">
-                      <widget class="QLineEdit" name="ymax_2"/>
+                      <widget class="QLineEdit" name="ymax_2TD"/>
                      </item>
                     </layout>
                    </item>
@@ -898,7 +891,7 @@ Equation
                       </widget>
                      </item>
                      <item row="0" column="1">
-                      <widget class="QLineEdit" name="xmin_2">
+                      <widget class="QLineEdit" name="xmin_2TD">
                        <property name="text">
                         <string/>
                        </property>
@@ -912,12 +905,12 @@ Equation
                       </widget>
                      </item>
                      <item row="1" column="1">
-                      <widget class="QLineEdit" name="xmax_2"/>
+                      <widget class="QLineEdit" name="xmax_2TD"/>
                      </item>
                     </layout>
                    </item>
                    <item row="0" column="1" rowspan="2">
-                    <widget class="QPushButton" name="autoRange1d_2">
+                    <widget class="QPushButton" name="autoRange1d_2TD">
                      <property name="sizePolicy">
                       <sizepolicy hsizetype="Expanding" vsizetype="Minimum">
                        <horstretch>0</horstretch>
@@ -935,21 +928,21 @@ Range</string>
                  <item>
                   <layout class="QVBoxLayout" name="verticalLayout_19">
                    <item>
-                    <widget class="QCheckBox" name="showAxisLabels_2">
+                    <widget class="QCheckBox" name="showAxisLabels_2TD">
                      <property name="text">
                       <string>Show Axis Labels</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QCheckBox" name="showTicks">
+                    <widget class="QCheckBox" name="showTicksTD">
                      <property name="text">
                       <string>Show Ticks</string>
                      </property>
                     </widget>
                    </item>
                    <item>
-                    <widget class="QCheckBox" name="showColormap">
+                    <widget class="QCheckBox" name="showColormapTD">
                      <property name="text">
                       <string>Show Color Map</string>
                      </property>
@@ -965,7 +958,7 @@ Range</string>
                       <set>Qt::AlignmentFlag::AlignLeading|Qt::AlignmentFlag::AlignLeft|Qt::AlignmentFlag::AlignVCenter</set>
                      </property>
                      <item row="0" column="1">
-                      <widget class="QLineEdit" name="lineEdit_8">
+                      <widget class="QLineEdit" name="aspRatTD">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
                          <horstretch>0</horstretch>
@@ -997,8 +990,8 @@ Ratio</string>
                      <rect>
                       <x>0</x>
                       <y>0</y>
-                      <width>166</width>
-                      <height>152</height>
+                      <width>16</width>
+                      <height>16</height>
                      </rect>
                     </property>
                    </widget>

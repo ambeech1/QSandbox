@@ -1,29 +1,32 @@
-#ifndef POTENTIAL1D_H
-#define POTENTIAL1D_H
+#ifndef _POTENTIAL1D_
+#define _POTENTIAL1D_
 
-template <typename x, typename V>
+#include <vector>
+
+enum FORM {infWell, fWell, barrier, quad};
+
 class Potential1D {
 public:
-    enum FORM {infWell, fWell, barrier, quad};
     Potential1D();
     Potential1D(double min, double max, double num);
-    Potential1D(double min, double max, FORM p);
+    Potential1D(double min, double max, double num, FORM p);
     void setPosMin(double min);
     void setPosMax(double max);
     void setPosN(double num);
     void setPot(FORM p);
-    V getPot();
+    std::vector<double> getPos();
+    std::vector<double> getPot();
 private:
-    x* pos = new x(101);
-    double xmin = -10;
-    double xmax = 10;
-    double N = 101;
-    double dx = (xmax - xmin) / (N - 1);
-    V* pot = new V(101);
-    V* fx;
+    std::vector<double> pos;
+    double xmin;
+    double xmax;
+    double N;
+    double dx;
+    std::vector<double> pot;
+    std::vector<double> (*fx)(std::vector<double> POS);
+    FORM form;
     void setPos();
-    void setForm(FORM p);
-    V invoke(x POS, V *func(x POS));
+    std::vector<double> invoke(std::vector<double> POS, std::vector<double> (*func)(std::vector<double> POS));
 };
 
-#endif // POTENTIAL1D_H
+#endif

@@ -1,13 +1,32 @@
 #include "tisemainwindow.h"
 #include "ui_tisemainwindow.h"
+#include "Potential1D.h"
+#include "VecQVecConvert.cpp"
+#include <QVector>
 
 int legendPosInd;
 double tickAspectRatio = 1.0;
+
+double xmin1D = -10;
+double xmax1D = 10;
+double ymin1D1 = -7;
+double ymax1D1 = 7;
+double ymin1D2 = -7;
+double ymax1D2 = 7;
+double xmin1Dsol = -10;
+double xmax1Dsol = 10;
+int N1D = 501;
+
+Potential1D Pot1D;
 
 TISEMainWindow::TISEMainWindow(QWidget *parent)
     : QDialog(parent)
     , ui(new Ui::TISEMainWindow)
 {
+    Pot1D.setPosMin(xmin1Dsol);
+    Pot1D.setPosMax(xmax1Dsol);
+    Pot1D.setPosN(N1D);
+
     // set up default tab and widget settings
     ui->setupUi(this);
     ui->tabDSelect->setCurrentIndex(0);
@@ -44,9 +63,9 @@ TISEMainWindow::TISEMainWindow(QWidget *parent)
     ui->TISEPlot1D->xAxis->setLabel("Position");
     ui->TISEPlot1D->yAxis->setLabel("Wavefunction");
     ui->TISEPlot1D->yAxis2->setLabel("Potential Energy");
-    ui->TISEPlot1D->xAxis->setRange(-10, 10);
-    ui->TISEPlot1D->yAxis->setRange(-7, 7);
-    ui->TISEPlot1D->yAxis2->setRange(-7, 7);
+    ui->TISEPlot1D->xAxis->setRange(xmin1D, xmax1D);
+    ui->TISEPlot1D->yAxis->setRange(ymin1D1, ymax1D1);
+    ui->TISEPlot1D->yAxis2->setRange(ymin1D2, ymax1D2);
     ui->TISEPlot1D->yAxis2->setVisible(true);
     ui->TISEPlot1D->xAxis->grid()->setSubGridVisible(true);
     ui->TISEPlot1D->yAxis->grid()->setSubGridVisible(true);
@@ -66,15 +85,13 @@ TISEMainWindow::TISEMainWindow(QWidget *parent)
     ui->TISEPlot2D->xAxis->grid()->setPen(QPen(QColor(255, 255, 255, 100), 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
     ui->TISEPlot2D->yAxis->grid()->setPen(QPen(QColor(255, 255, 255, 100), 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
 
+    // Initialize Plot (1D)
+    QVector<double> X(vec2qvec(Pot1D.getPos()));
+    QVector<double> Y(vec2qvec(Pot1D.getPot()));
 
-    QVector<double> x(5000), y(5000);
-    for (int i = 0; i < 5000; i++) {
-        x[i] = 2 * qCos(2 * 3.14159265 * i / 5000);
-        y[i] = 2 * qSin(2 * 3.14159265 * i / 5000);
-    }
-    ui->TISEPlot2D->graph(0)->setData(x, y);
-    ui->TISEPlot2D->replot();
-    ui->TISEPlot2D->update();
+    ui->TISEPlot1D->graph(1)->setData(X, Y);
+    ui->TISEPlot1D->replot();
+    ui->TISEPlot1D->update();
 }
 
 TISEMainWindow::~TISEMainWindow()
@@ -188,7 +205,6 @@ void TISEMainWindow::on_yminR_textChanged(const QString &arg1)
         ui->TISEPlot1D->replot();
         ui->TISEPlot1D->update();
     }
-
 }
 
 void TISEMainWindow::on_ymaxR_textChanged(const QString &arg1)
@@ -204,7 +220,6 @@ void TISEMainWindow::on_ymaxR_textChanged(const QString &arg1)
         ui->TISEPlot1D->replot();
         ui->TISEPlot1D->update();
     }
-
 }
 
 void TISEMainWindow::on_showAxisLabels_stateChanged(int arg1)
@@ -504,4 +519,48 @@ void TISEMainWindow::on_lineEdit_8_textChanged(const QString &arg1)
 }
 
 
+
+
+void TISEMainWindow::on_infWel_clicked()
+{
+    Pot1D.setPot(infWell);
+    QVector<double> X(vec2qvec(Pot1D.getPos()));
+    QVector<double> Y(vec2qvec(Pot1D.getPot()));
+    ui->TISEPlot1D->graph(1)->setData(X, Y);
+    ui->TISEPlot1D->replot();
+    ui->TISEPlot1D->update();
+}
+
+
+void TISEMainWindow::on_fWell_clicked()
+{
+    Pot1D.setPot(fWell);
+    QVector<double> X(vec2qvec(Pot1D.getPos()));
+    QVector<double> Y(vec2qvec(Pot1D.getPot()));
+    ui->TISEPlot1D->graph(1)->setData(X, Y);
+    ui->TISEPlot1D->replot();
+    ui->TISEPlot1D->update();
+}
+
+
+void TISEMainWindow::on_barrier_clicked()
+{
+    Pot1D.setPot(barrier);
+    QVector<double> X(vec2qvec(Pot1D.getPos()));
+    QVector<double> Y(vec2qvec(Pot1D.getPot()));
+    ui->TISEPlot1D->graph(1)->setData(X, Y);
+    ui->TISEPlot1D->replot();
+    ui->TISEPlot1D->update();
+}
+
+
+void TISEMainWindow::on_quad_clicked()
+{
+    Pot1D.setPot(quad);
+    QVector<double> X(vec2qvec(Pot1D.getPos()));
+    QVector<double> Y(vec2qvec(Pot1D.getPot()));
+    ui->TISEPlot1D->graph(1)->setData(X, Y);
+    ui->TISEPlot1D->replot();
+    ui->TISEPlot1D->update();
+}
 

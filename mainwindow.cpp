@@ -18,7 +18,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_aboutApp_clicked()
 {
-    QMessageBox::about(this, "About Schrodinger's Sandbox", "");
+    QMessageBox::about(this, "About Quantum Sandbox", "");
 }
 
 void MainWindow::on_aboutQt_clicked()

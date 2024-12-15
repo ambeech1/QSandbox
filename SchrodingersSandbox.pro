@@ -19,6 +19,7 @@ SOURCES += \
     TDSE_2D.cpp \
     TISE_1D.cpp \
     TISE_2D.cpp \
+    VecQVecConvert.cpp \
     main.cpp \
     mainwindow.cpp \
     qcustomplot.cpp \
@@ -53,7 +54,7 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 
 # MuParserX
 QMAKE_LFLAGS += -static -v
-QMAKE_CXXFLAGS += -static
+QMAKE_CXXFLAGS += -static -v
 
 INCLUDEPATH += $$PWD/libs/muparserx/include
 LIBS += -L$$PWD/libs/muparserx/lib -lmuparserx -static
