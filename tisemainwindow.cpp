@@ -537,10 +537,15 @@ void TISEMainWindow::on_lineEdit_8_textChanged(const QString &arg1)
 void TISEMainWindow::on_infWel_clicked()
 {
     // remove existing wavefunctions
-    int numGraphs = ui->TISEPlot1D->graphCount();
-    for (int i = 1; i < numGraphs; i++) {
-        ui->TISEPlot1D->removeGraph(i);
-    }
+    int numGraphs = ui->TISEPlot1D->clearGraphs();
+
+    ui->TISEPlot1D->addGraph(ui->TISEPlot1D->xAxis, ui->TISEPlot1D->yAxis2);
+    pot1Dpen.setColor(QColor(pot1DpenR, pot1DpenG, pot1DpenB));
+    pot1Dpen.setWidthF(pot1DpenLw);
+    ui->TISEPlot1D->graph(0)->setPen(pot1Dpen);
+    ui->TISEPlot1D->graph(0)->setLineStyle(QCPGraph::lsLine);
+    ui->TISEPlot1D->graph(0)->setPen(QPen(pot1Dpen));
+    ui->TISEPlot1D->graph(0)->setName("Potential Energy");
     Pot1D.setPot(infWell);
     QVector<double> X(vec2qvec(Pot1D.getPos()));
     QVector<double> Y(vec2qvec(Pot1D.getPot()));
@@ -553,10 +558,15 @@ void TISEMainWindow::on_infWel_clicked()
 void TISEMainWindow::on_fWell_clicked()
 {
     // remove existing wavefunctions
-    int numGraphs = ui->TISEPlot1D->graphCount();
-    for (int i = 1; i < numGraphs; i++) {
-        ui->TISEPlot1D->removeGraph(i);
-    }
+    int numGraphs = ui->TISEPlot1D->clearGraphs();
+
+    ui->TISEPlot1D->addGraph(ui->TISEPlot1D->xAxis, ui->TISEPlot1D->yAxis2);
+    pot1Dpen.setColor(QColor(pot1DpenR, pot1DpenG, pot1DpenB));
+    pot1Dpen.setWidthF(pot1DpenLw);
+    ui->TISEPlot1D->graph(0)->setPen(pot1Dpen);
+    ui->TISEPlot1D->graph(0)->setLineStyle(QCPGraph::lsLine);
+    ui->TISEPlot1D->graph(0)->setPen(QPen(pot1Dpen));
+    ui->TISEPlot1D->graph(0)->setName("Potential Energy");
     Pot1D.setPot(fWell);
     QVector<double> X(vec2qvec(Pot1D.getPos()));
     QVector<double> Y(vec2qvec(Pot1D.getPot()));
@@ -569,10 +579,15 @@ void TISEMainWindow::on_fWell_clicked()
 void TISEMainWindow::on_barrier_clicked()
 {
     // remove existing wavefunctions
-    int numGraphs = ui->TISEPlot1D->graphCount();
-    for (int i = 1; i < numGraphs; i++) {
-        ui->TISEPlot1D->removeGraph(i);
-    }
+    int numGraphs = ui->TISEPlot1D->clearGraphs();
+
+    ui->TISEPlot1D->addGraph(ui->TISEPlot1D->xAxis, ui->TISEPlot1D->yAxis2);
+    pot1Dpen.setColor(QColor(pot1DpenR, pot1DpenG, pot1DpenB));
+    pot1Dpen.setWidthF(pot1DpenLw);
+    ui->TISEPlot1D->graph(0)->setPen(pot1Dpen);
+    ui->TISEPlot1D->graph(0)->setLineStyle(QCPGraph::lsLine);
+    ui->TISEPlot1D->graph(0)->setPen(QPen(pot1Dpen));
+    ui->TISEPlot1D->graph(0)->setName("Potential Energy");
     Pot1D.setPot(barrier);
     QVector<double> X(vec2qvec(Pot1D.getPos()));
     QVector<double> Y(vec2qvec(Pot1D.getPot()));
@@ -585,10 +600,16 @@ void TISEMainWindow::on_barrier_clicked()
 void TISEMainWindow::on_quad_clicked()
 {
     // remove existing wavefunctions
-    int numGraphs = ui->TISEPlot1D->graphCount();
-    for (int i = 1; i < numGraphs; i++) {
-        ui->TISEPlot1D->removeGraph(i);
-    }
+    int numGraphs = ui->TISEPlot1D->clearGraphs();
+
+    ui->TISEPlot1D->addGraph(ui->TISEPlot1D->xAxis, ui->TISEPlot1D->yAxis2);
+    pot1Dpen.setColor(QColor(pot1DpenR, pot1DpenG, pot1DpenB));
+    pot1Dpen.setWidthF(pot1DpenLw);
+    ui->TISEPlot1D->graph(0)->setPen(pot1Dpen);
+    ui->TISEPlot1D->graph(0)->setLineStyle(QCPGraph::lsLine);
+    ui->TISEPlot1D->graph(0)->setPen(QPen(pot1Dpen));
+    ui->TISEPlot1D->graph(0)->setName("Potential Energy");
+
     Pot1D.setPot(quad);
     QVector<double> X(vec2qvec(Pot1D.getPos()));
     QVector<double> Y(vec2qvec(Pot1D.getPot()));
@@ -757,44 +778,39 @@ void TISEMainWindow::on_prQuNum_textChanged(const QString &arg1)
 void TISEMainWindow::on_computeSol_clicked()
 {
     // remove existing wavefunctions
-    int numGraphs = ui->TISEPlot1D->graphCount();
-    for (int i = 1; i < numGraphs; i++) {
-        ui->TISEPlot1D->removeGraph(i);
-    }
+    int numGraphs = ui->TISEPlot1D->clearGraphs();
+
+    ui->TISEPlot1D->addGraph(ui->TISEPlot1D->xAxis, ui->TISEPlot1D->yAxis2);
+    pot1Dpen.setColor(QColor(pot1DpenR, pot1DpenG, pot1DpenB));
+    pot1Dpen.setWidthF(pot1DpenLw);
+    ui->TISEPlot1D->graph(0)->setPen(pot1Dpen);
+    ui->TISEPlot1D->graph(0)->setLineStyle(QCPGraph::lsLine);
+    ui->TISEPlot1D->graph(0)->setPen(QPen(pot1Dpen));
+    ui->TISEPlot1D->graph(0)->setName("Potential Energy");
+
+    QVector<double> X(vec2qvec(Pot1D.getPos()));
+    QVector<double> Y(vec2qvec(Pot1D.getPot()));
+
+    ui->TISEPlot1D->graph(0)->setData(X, Y);
 
     // add new wavefunctions
-    std::pair<std::vector<double>, std::vector<std::vector<double>>> eig(solveEigen(prQuNum, upToPr, xmin1Dsol, xmax1Dsol, N1D, Pot1D, 1, 0.5));
+    std::pair<std::vector<double>, std::vector<std::vector<double>>> eig(solveEigen(prQuNum, Pot1D, 1, 0.5));
     std::vector<double> evals = eig.first;
     std::vector<std::vector<double>> evects = eig.second;
-    if (upToPr) {
-        for (int i = 0; i < evals.size(); i++) {
-            ui->TISEPlot1D->addGraph(ui->TISEPlot1D->xAxis, ui->TISEPlot1D->yAxis);
-            ui->TISEPlot1D->graph(i + 1)->setLineStyle(QCPGraph::lsLine);
-            std::string legendText = "Wavefunction (n = " + std::to_string(i + 1) + ")";
-            ui->TISEPlot1D->graph(i + 1)->setName(QString::fromStdString(legendText));
-
-            QVector<double> X(vec2qvec(Pot1D.getPos()));
-            QVector<double> Y(vec2qvec(evects[i]));
-
-            ui->TISEPlot1D->graph(i + 1)->setData(X, Y);
-        }
-        ui->TISEPlot1D->replot();
-        ui->TISEPlot1D->update();
-    }
-    else {
+    for (int i = 0; i < evals.size(); i++) {
         ui->TISEPlot1D->addGraph(ui->TISEPlot1D->xAxis, ui->TISEPlot1D->yAxis);
-        ui->TISEPlot1D->graph(1)->setLineStyle(QCPGraph::lsLine);
-        std::string legendText = "Wavefunction (n = " + std::to_string(prQuNum) + ")";
-        ui->TISEPlot1D->graph(1)->setName(QString::fromStdString(legendText));
+        ui->TISEPlot1D->graph(i + 1)->setLineStyle(QCPGraph::lsLine);
+        std::string legendText = "Wavefunction (n = " + std::to_string(i + 1) + ")";
+        ui->TISEPlot1D->graph(i + 1)->setName(QString::fromStdString(legendText));
 
         QVector<double> X(vec2qvec(Pot1D.getPos()));
-        QVector<double> Y(vec2qvec(evects[0]));
+        QVector<double> Y(vec2qvec(evects[i]));
 
-        ui->TISEPlot1D->graph(1)->setData(X, Y);
-
-        ui->TISEPlot1D->replot();
-        ui->TISEPlot1D->update();
+        ui->TISEPlot1D->graph(i + 1)->setData(X, Y);
     }
+
+    ui->TISEPlot1D->replot();
+    ui->TISEPlot1D->update();
 }
 
 

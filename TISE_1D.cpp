@@ -5,8 +5,11 @@
 #include <utility>
 #include "Potential1D.h"
 
-std::pair<std::vector<double>, std::vector<std::vector<double>>> solveEigen(int prQuNum, bool upToPr, double xmin, double xmax, int N, Potential1D pot = Potential1D(), double hbar = 1, double m = 0.5) {
+std::pair<std::vector<double>, std::vector<std::vector<double>>> solveEigen(int prQuNum, Potential1D pot = Potential1D(), double hbar = 1, double m = 0.5) {
     // instantiate constants
+    double xmin = pot.getPosMin();
+    double xmax = pot.getPosMax();
+    int N = pot.getPosN();
     double dx = (xmin - xmax) / (N - 1);
     double A = -(pow(hbar, 2)) / (2 * m);
 
@@ -42,26 +45,15 @@ std::pair<std::vector<double>, std::vector<std::vector<double>>> solveEigen(int 
     // get eigenvalues
     Eigen::VectorXd eigenvalues = eigs.eigenvalues();
     std::vector<double> evals;
-    if (upToPr) {
-        for (int i = 0; i < prQuNum; i++) {
-            evals.push_back(eigenvalues[i]);
-        }
-    }
-    else {
-        evals.push_back(eigenvalues[prQuNum - 1]);
+    for (int i = 0; i < prQuNum; i++) {
+        evals.push_back(eigenvalues[i]);
     }
 
     // get eigenvectors
     Eigen::MatrixXd eigenvectors = eigs.eigenvectors();
     std::vector<std::vector<double>> evects;
-    if (upToPr) {
-        for (int i = 0; i < prQuNum; i++) {
-            std::vector<double> stdV(eigenvectors.col(i).real().data(), eigenvectors.col(i).real().data() + eigenvectors.col(i).real().size());
-            evects.push_back(stdV);
-        }
-    }
-    else {
-        std::vector<double> stdV(eigenvectors.col(prQuNum - 1).real().data(), eigenvectors.col(prQuNum - 1).real().data() + eigenvectors.col(prQuNum - 1).real().size());
+    for (int i = 0; i < prQuNum; i++) {
+        std::vector<double> stdV(eigenvectors.col(i).real().data(), eigenvectors.col(i).real().data() + eigenvectors.col(i).real().size());
         evects.push_back(stdV);
     }
 

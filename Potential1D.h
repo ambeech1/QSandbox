@@ -16,6 +16,9 @@ public:
     void setPot(FORM p);
     std::vector<double> getPos();
     std::vector<double> getPot();
+    double getPosMin();
+    double getPosMax();
+    double getPosN();
 private:
     std::vector<double> pos;
     double xmin;

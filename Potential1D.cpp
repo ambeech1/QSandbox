@@ -138,3 +138,18 @@ void Potential1D::setPos() {
 std::vector<double> Potential1D::invoke(std::vector<double> POS, std::vector<double> (*func)(std::vector<double> POS)) {
     return func(POS);
 }
+
+
+double Potential1D::getPosMin() {
+    return xmin;
+}
+
+
+double Potential1D::getPosMax() {
+    return xmax;
+}
+
+
+double Potential1D::getPosN() {
+    return N;
+}
