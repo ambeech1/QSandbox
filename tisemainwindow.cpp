@@ -534,6 +534,7 @@ void TISEMainWindow::on_lineEdit_8_textChanged(const QString &arg1)
 
 
 
+
 void TISEMainWindow::on_infWel_clicked()
 {
     // remove existing wavefunctions
